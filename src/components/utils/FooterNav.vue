@@ -1,56 +1,124 @@
 <template>
-  <v-footer dark padless class="footer mt-16">
-    <v-card
-      flat
-      tile
-      color="#789de1"
-      class="darken-4 lighten-1 white--text text-center max-0"
-    >
-      <v-container>
-        <v-img max-height="150" max-width="250" src="/images/logo.png"></v-img>
-        <p>iiuyy</p>
-        <v-layout row wrap>
-          <v-flex class="footer my-7" xs="12" sm="6" md="4" lg="3">
-            <v-btn
-              text
-              v-for="(item, i) in loginLinks"
-              :key="i"
-              link
-              router
-              :to="item.route"
-            >
-              <v-icon class="mr-2" color="#f4511e">{{ item.icon }}</v-icon>
-              <span class="white--text">{{ item.title }}</span>
-            </v-btn>
-          </v-flex>
-        </v-layout>
-      </v-container>
-      <v-divider></v-divider>
-      <v-row justify="center" class="ma-0">
-        <v-col cols="12" sm="8" md="6" lg="5">
-          <h2 class="text-center font-weight-bold mb-4">
-            Welcome to Our Dormitory Website
-          </h2>
-          <p class="text-center">Join</p>
-        </v-col>
-      </v-row>
-    </v-card>
+  <v-footer app>
+    <v-row justify="center">
+      <v-col class="text-center">
+        <v-btn
+          my="34"
+          @click="routeHome"
+          class="btn-custom"
+          style="
+            background-color: transparent;
+            border: none;
+            box-shadow: none;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          "
+        >
+          <v-img
+            v-if="$vuetify.theme.dark"
+            lazy-src="/images/footer_night_logo.png"
+            max-height="150"
+            max-width="250"
+            src="/images/footer_night_logo.png"
+          ></v-img>
+          <v-img
+            v-else
+            lazy-src="/images/footer_day_logo.png"
+            max-height="150"
+            max-width="250"
+            src="/images/footer_day_logo.png"
+          ></v-img>
+        </v-btn>
+        <div class="mt-info">
+          <p class="mt-2">Full Stack Web Developer- Alberta Canada</p>
+          <!-- Phone number with phone icon -->
+          <v-btn icon class="mt-phone" v-if="$vuetify.theme.dark">
+            <v-icon color="white">mdi-phone</v-icon>
+            <p>+1(204)333-7744</p>
+          </v-btn>
+          <v-btn icon class="mt-phone" v-else>
+            <v-icon color="black">mdi-phone</v-icon>
+            <p>+1(204)333-7744</p>
+          </v-btn>
+        </div>
+        <div class="mt-flex" v-if="$vuetify.theme.dark">
+          <!-- LinkedIn icon and link -->
+          <v-btn icon @click="goToLinkedIn">
+            <v-icon color="white">mdi-linkedin</v-icon>
+          </v-btn>
+          <!-- GitHub icon and link -->
+          <v-btn icon @click="goToGitHub">
+            <v-icon color="white">mdi-github</v-icon>
+          </v-btn>
+        </div>
+        <div class="mt-flex" v-else>
+          <!-- LinkedIn icon and link -->
+          <v-btn icon @click="goToLinkedIn">
+            <v-icon color="black">mdi-linkedin</v-icon>
+          </v-btn>
+          <!-- GitHub icon and link -->
+          <v-btn icon @click="goToGitHub">
+            <v-icon color="black">mdi-github</v-icon>
+          </v-btn>
+        </div>
+        <div class="mt-flex-right">
+          <p>© 2024 Simret Paulos - All rights reserved. Powered by Vue.js</p>
+        </div>
+      </v-col>
+    </v-row>
   </v-footer>
 </template>
 
 <script>
 export default {
-  data: () => ({
-    loginLinks: [
-      { icon: "mdi-home", title: "Home", route: "/" },
-      { icon: "mdi-school", title: "University Listing", route: "/listings" },
-      { icon: "mdi-domain", title: "List Your Place", route: "/signup" },
-      { icon: "mdi-mail", title: "Contact Us", route: "/contact" },
-      { icon: "mdi-lightbulb", title: "About Us", route: "/about" },
-    ],
-  }),
+  methods: {
+    goToLinkedIn() {
+      // Redirect to  LinkedIn profile
+      window.open(
+        "https://www.linkedin.com/in/simret-paulos-45b42b10b/",
+        "_blank"
+      );
+    },
+    toggleTheme() {
+      this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
+      this.listItemToggle = true;
+    },
+    goToGitHub() {
+      // Redirect to  GitHub profile
+      window.open("https://github.com/simretB05", "_blank");
+    },
+  },
 };
 </script>
 
 <style scoped>
+.btn-custom {
+  margin-top: 43px;
+}
+.mt-info {
+  display: flex;
+  width: 300px;
+  justify-content: start;
+  flex-direction: column;
+  margin-left: 43px;
+}
+.mt-phone {
+  display: flex;
+  width: 300px;
+  justify-content: start;
+  flex-direction: column;
+  margin-left: 57px;
+}
+
+.mt-flex {
+  display: flex;
+  justify-content: start;
+  margin-left: 43px;
+}
+.mt-flex-right {
+  display: flex;
+  justify-content: flex-end;
+}
 </style>
