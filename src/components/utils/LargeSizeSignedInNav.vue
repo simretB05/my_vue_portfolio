@@ -10,7 +10,7 @@
             link
             router
             :to="item.route"
-            @click="i === loginLinks.length - 1 ? logout(item) : null"
+            @click="scrollToSection(item.route)"
             :class="{ 'last-item-button': i === loginLinks.length - 1 }"
           >
             <v-list-item-content>
@@ -36,20 +36,31 @@ export default {
       loginLinks: [
         {
           title: "About",
-          route: "/about",
+          route: "#about",
         },
         {
           title: "Contact",
-          route: "/contact",
+          route: "#contact",
         },
         {
           title: "Projects",
-          route: "/projects",
+          route: "#projects",
+        },
+        {
+          title: "Skills",
+          route: "#skills",
         },
       ],
     };
   },
-  methods: {},
+  methods: {
+    scrollToSection(sectionId) {
+      // Scroll to the specified section using smooth scrolling
+      document.querySelector(sectionId).scrollIntoView({
+        behavior: "smooth",
+      });
+    },
+  },
 };
 </script>
 
