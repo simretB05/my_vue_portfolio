@@ -13,19 +13,18 @@ export default new Vuetify( {
     theme: {
         themes: {
             light: {
-                primary: colors.lightBlue,
-                secondary: colors.grey.darken1,
-                accent: colors.pink.darken1,
+                primary: colors.brown.darken2,       // Brown
+                secondary: colors.green.darken1,     // Green
+                accent: colors.orange.darken1,       // Orange
                 error: colors.red.accent3,
-                background: colors.indigo.lighten5,
+                background: colors.grey.lighten4,    // Light Grey
                 info: colors.teal.darken1,
             },
             dark: {
-                primary: colors.blue.darken4,
-                background: colors.indigo.base,
+                primary: colors.brown.darken4,       // Dark Brown
+                background: colors.grey.darken4,     // Dark Grey
                 info: colors.teal.lighten1,
                 dark: false, // or true for dark mode
-
             },
         },
     },

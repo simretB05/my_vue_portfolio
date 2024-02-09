@@ -39,16 +39,17 @@ export default {
           route: "#about",
         },
         {
-          title: "Contact",
-          route: "#contact",
+          title: "Skills",
+          route: "#skills",
         },
+
         {
           title: "Projects",
           route: "#projects",
         },
         {
-          title: "Skills",
-          route: "#skills",
+          title: "Contact",
+          route: "#contact",
         },
       ],
     };

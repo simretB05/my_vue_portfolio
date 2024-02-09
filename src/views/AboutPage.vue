@@ -16,7 +16,9 @@ export default {
   
   <style scoped>
 main {
-  min-height: 70vh;
-  background-color: rebeccapurple;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  place-items: start;
 }
 </style>

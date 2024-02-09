@@ -15,8 +15,4 @@ export default {
 </script>
       
       <style scoped>
-main {
-  min-height: 70vh;
-  background-color: rebeccapurple;
-}
 </style>

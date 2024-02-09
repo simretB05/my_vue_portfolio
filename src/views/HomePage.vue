@@ -1,24 +1,15 @@
 <template>
-  <v-container>
+  <div class="main">
     <nav-bar-menu></nav-bar-menu>
 
-    <div>
-      <div id="about">
-        <about-page />
-      </div>
-      <div id="contact">
-        <contact-page />
-      </div>
-      <div id="projects">
-        <projects-page />
-      </div>
-      <div id="skills">
-        <skill-page />
-      </div>
-    </div>
+    <about-page id="about" />
+    <skill-page id="skills" />
+
+    <projects-page id="projects" />
+    <contact-page id="contact" />
 
     <footer-nav></footer-nav>
-  </v-container>
+  </div>
 </template>
 
 <script>
@@ -42,11 +33,13 @@ export default {
 </script>
 
 <style scoped>
-.btn {
-  margin: 0 auto;
-}
-main {
-  min-height: 70vh;
-  background-color: rebeccapurple;
+.main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding: 0;
+  margin: 0;
+  min-height: 80vh;
 }
 </style>

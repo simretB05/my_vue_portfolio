@@ -2,10 +2,10 @@
   <v-container>
     <nav fixed-top class="nav">
       <v-layout row class="lg_nav">
-        <v-flex xs-12>
+        <v-flex>
           <v-app-bar app flat>
             <v-app-bar-nav-icon
-              color="#ff5722"
+              color="#663399"
               class="d-lg-none darken-6"
               @click="drawer = !drawer"
             >
@@ -64,7 +64,6 @@
         temporary
         height="100%"
       >
-        <!-- Close icon to close the dialog -->
         <v-card-title>
           <v-spacer></v-spacer>
           <v-btn icon @click="drawer = false">
@@ -77,7 +76,6 @@
   </v-container>
 </template>
 <script>
-// import axios from "axios";
 import SignedInNav from "@/components/utils/SignedInNav.vue";
 import LargeSizeSignedInNav from "@/components/utils/LargeSizeSignedInNav.vue";
 export default {
@@ -118,7 +116,6 @@ export default {
 .lg_nav {
   display: flex;
   width: 90%;
-  height: 10vh;
 }
 
 .nav-div {
@@ -131,16 +128,10 @@ export default {
   box-shadow: none;
   color: "#ffffff";
 }
-.my-5 {
-  padding: 16px;
-}
-.pa-2 {
-  width: 20%;
-}
+
 .v-responsive__content {
   width: 50%;
   justify-content: center;
-  color: #789de1;
 }
 .theme--light.v-list-item:not(.v-list-item--active):not(
     .v-list-item--disabled
@@ -187,9 +178,9 @@ export default {
 .v-icon.v-icon {
   margin-top: 12px;
 }
-/* Bounce effect on click */
+
 .last-item-button:active {
-  transform: scale(0.95); /* Scale down the element when clicked */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Increase shadow size when clicked */
+  transform: scale(0.95);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 </style>
