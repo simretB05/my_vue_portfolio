@@ -38,11 +38,13 @@ export default {
   display: grid;
   place-items: center;
   font-family: "Roboto";
-
   padding: 0;
   min-height: 80vh;
 }
-#about {
+#about,
+#projects,
+#contact,
+#skills {
   min-height: 20vh;
 }
 </style>

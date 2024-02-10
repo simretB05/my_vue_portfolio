@@ -13,7 +13,13 @@
             @click="scrollToSection(item.route)"
             :class="{ 'last-item-button': i === loginLinks.length - 1 }"
           >
-            <v-list-item-content>
+            <v-list-item-content
+              style="
+                font-family: sans-serif;
+                font-size: 1.5rem;
+                font-weight: bolder;
+              "
+            >
               <v-list-item-title
                 class="'text--darken-4': isDarkTheme, 'teal': !isDarkTheme,font-weight-bold mx-3"
                 :style="{ color: isDarkTheme ? '' : '#1bae9c' }"

@@ -17,17 +17,17 @@
         >
           <v-img
             v-if="$vuetify.theme.dark"
-            lazy-src="/images/footer_night_logo.png"
+            lazy-src="/images/logo.png"
             max-height="150"
             max-width="250"
-            src="/images/footer_night_logo.png"
+            src="/images/logo.png"
           ></v-img>
           <v-img
             v-else
-            lazy-src="/images/footer_day_logo.png"
+            lazy-src="/images/logo.png"
             max-height="150"
             max-width="250"
-            src="/images/footer_day_logo.png"
+            src="/images/logo.png"
           ></v-img>
         </v-btn>
         <Lottie :options="animationOptions" width="300px" height="300px" />

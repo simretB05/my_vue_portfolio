@@ -1,5 +1,15 @@
 <template>
-  <v-container>
+  <v-container class="main">
+    <h1 class="title-container">My Web Development Projects</h1>
+
+    <p class="titleText">
+      These projects represent significant milestones in my web development
+      journey, serving as valuable practice grounds. Through their execution,
+      I've not only acquired technical proficiency but also honed my
+      communication skills. The confidence gained from successfully completing
+      these endeavors fuels my belief in my ability to tackle more ambitious
+      projects in the future.
+    </p>
     <v-row>
       <v-col
         v-for="(project, index) in projects"
@@ -21,6 +31,7 @@
               <v-card-title class="card__item__details__title">{{
                 project.title
               }}</v-card-title>
+
               <v-card-text class="card__item__details__text">{{
                 project.description
               }}</v-card-text>
@@ -86,9 +97,17 @@ export default {
 </script>
 
 <style scoped>
-.title {
-  font-size: 2rem;
-  font-weight: bold;
+.main {
+  display: grid;
+  place-items: center;
+  margin-top: 70px;
+  width: 90%;
+  transition: background-color 0.3s;
+}
+.title-container {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #1bae9c;
 }
 
 .titleText {
@@ -98,6 +117,11 @@ export default {
 
 .card {
   margin-bottom: 20px;
+  transition: background-color 0.3s; /* Adding a smooth transition effect */
+}
+
+.card:hover {
+  background-color: teal; /* Teal color for the hover effect */
 }
 
 .card__item__img {

@@ -41,15 +41,27 @@
                 'font-weight-bold': true,
               }"
             >
-              A Full Stack Web Developer with a versatile skill set. Innotech
-              College has equipped me with expertise in React and Vue.js for
-              frontend, Python (Flask) for backend, and MySQL for database
-              management. I'm proficient in JavaScript, CSS, and Sass, enhancing
-              my ability to create seamless and visually appealing web
-              experiences. Additionally, I have hands-on experience with Figma
-              for design collaboration and possess knowledge in AWS cloud
-              architecture and Oracle technologies.
+              My skills extend beyond coding; I have practical experience in AWS
+              cloud architecture and a solid understanding of Oracle
+              technologies. Let's harness the power of cloud solutions together
+              to turn innovative ideas into reality. Additionally, I'm
+              proficient in collaborative design using Figma, ensuring a
+              seamless integration of creativity into our cloud-driven
+              solutions.
             </p>
+            <a href="/path/to/resume.pdf" download class="download-link btn">
+              Download my resume
+            </a>
+
+            <div class="mt-info">
+              <!-- LinkedIn and GitHub icons with links -->
+              <v-btn icon @click="goToLinkedIn">
+                <v-icon style="color: #1bae9c">mdi-linkedin</v-icon>
+              </v-btn>
+              <v-btn icon @click="goToGitHub">
+                <v-icon style="color: #1bae9c">mdi-github</v-icon>
+              </v-btn>
+            </div>
           </div>
         </div>
       </div>
@@ -91,6 +103,7 @@ export default {
   flex-direction: column;
   align-items: start;
   justify-items: flex-start;
+  font-family: sans-serif;
 }
 
 .profile-container {
@@ -112,9 +125,15 @@ export default {
   align-items: start;
   position: relative;
   border-radius: 50%;
-  width: 50%;
+  border: 1px dashed #1bae9c;
+  width: 100%;
 }
-
+.mt-info {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
 .discription_cont {
   width: 90%;
   display: grid;
@@ -160,19 +179,19 @@ export default {
   text-align: center;
   width: 160%;
   letter-spacing: 0.0112rem;
+  font-family: sans-serif;
   line-height: 26px;
-  font-size: 0.91rem;
-  font-weight: 100;
-  color: hsl(260, 2%, 28%);
+  font-size: 0.991rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
 }
-
 .my-name {
   font-weight: bold;
   color: #1bae9c;
   font-size: 2.4rem;
   font-weight: 500;
   padding: 0 12px;
-  /* letter-spacing: 0.0913rem; */
+  letter-spacing: 0.0913rem;
   font-family: "Roboto";
 }
 
@@ -185,6 +204,26 @@ export default {
   display: flex;
   justify-content: center;
   align-items: start;
+}
+.download-link.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: #1bae9c;
+  color: #ffffff;
+  border: 2px solid #1bae9c;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+  margin-top: 34px;
+}
+
+.download-link.btn:hover {
+  background-color: #ffffff;
+  color: #1bae9c;
 }
 
 /* Media query for larger screens */

@@ -1,7 +1,15 @@
 <template>
-  <v-container>
+  <v-container class="main">
     <div class="title-container">
-      <h1>Check Out My Progressing Skills</h1>
+      <h1 class="main-title">Check Out My Progressing Skills</h1>
+    </div>
+    <div class="title-container">
+      <p>
+        Over the course of the past three years, I have steadfastly dedicated
+        myself to the development and enhancement of these skills, a commitment
+        that is perceptibly manifested through the ongoing evolution showcased
+        in my GitHub commit history and projects.
+      </p>
     </div>
     <v-row justify="center">
       <v-col
@@ -16,7 +24,9 @@
           @mouseover="hoverCard(index)"
           @mouseleave="leaveCard"
         >
-          <v-icon class="display-2" size="10">{{ category.icon }}</v-icon>
+          <v-icon color="#1bae9c" class="display-2" size="10">{{
+            category.icon
+          }}</v-icon>
           <h3 class="mt-2 title">{{ category.title }}</h3>
           <v-divider class="my-2"></v-divider>
           <v-row justify="center">
@@ -85,24 +95,39 @@ export default {
 </script>
 
 <style scoped>
+.main {
+  display: grid;
+  place-items: center;
+  margin-top: 70px;
+  width: 90%;
+  transition: background-color 0.3s;
+}
 .title-container {
   text-align: center;
   margin-bottom: 20px;
 }
+.main-title {
+  color: #1bae9c;
+}
 .skill-card {
-  transition: box-shadow 0.3s;
+  transition: box-shadow 0.3s, background-color 0.3s; /* Adding a smooth transition effect */
   text-align: center;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
 .skill-card:hover {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  background-color: rgb(215, 239, 239); /* Teal color for the hover effect */
 }
+
 .title {
   font-size: 1.2rem;
   font-weight: bold;
   margin-top: 0.5rem;
+  color: #1bae9c;
 }
+
 .chip-small {
   font-size: 0.8rem;
   padding: 4px 8px;
