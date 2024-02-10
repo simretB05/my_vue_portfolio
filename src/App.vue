@@ -17,7 +17,7 @@ body,
 html {
   margin: 0;
   padding: 0;
-  font-family: "roboto-mono", monospace;
+  font-family: "Roboto";
 }
 * {
   box-sizing: border-box;

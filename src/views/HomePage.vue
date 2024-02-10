@@ -35,11 +35,14 @@ export default {
 <style scoped>
 .main {
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: start;
+  display: grid;
+  place-items: center;
+  font-family: "Roboto";
+
   padding: 0;
-  margin: 0;
   min-height: 80vh;
+}
+#about {
+  min-height: 20vh;
 }
 </style>

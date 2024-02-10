@@ -15,7 +15,8 @@
           >
             <v-list-item-content>
               <v-list-item-title
-                class="'text--darken-1': isDarkTheme, 'white--text': !isDarkTheme,font-weight-bold mx-3"
+                class="'text--darken-4': isDarkTheme, 'teal': !isDarkTheme,font-weight-bold mx-3"
+                :style="{ color: isDarkTheme ? '' : '#1bae9c' }"
                 >{{ item.title }}</v-list-item-title
               >
             </v-list-item-content>

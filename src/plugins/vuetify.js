@@ -1,4 +1,3 @@
-
 import '@mdi/font/css/materialdesignicons.css';
 import Vue from 'vue';
 import Vuetify from 'vuetify/lib/framework';
@@ -9,22 +8,23 @@ Vue.use( Vuetify );
 export default new Vuetify( {
     icons: {
         iconfont: 'mdi',
+        color: '#1bae9c'
     },
     theme: {
         themes: {
             light: {
-                primary: colors.brown.darken2,       // Brown
-                secondary: colors.green.darken1,     // Green
-                accent: colors.orange.darken1,       // Orange
+                primary: '#1bae9c',
+                secondary: '#1bae9c',
+                accent: '#1bae9c',
                 error: colors.red.accent3,
-                background: colors.grey.lighten4,    // Light Grey
+                background: colors.grey.lighten4,
                 info: colors.teal.darken1,
             },
             dark: {
-                primary: colors.brown.darken4,       // Dark Brown
-                background: colors.grey.darken4,     // Dark Grey
+                primary: colors.brown.darken4,
+                background: colors.red.darken4,
                 info: colors.teal.lighten1,
-                dark: false, // or true for dark mode
+                dark: false,
             },
         },
     },

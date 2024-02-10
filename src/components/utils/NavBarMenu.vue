@@ -3,13 +3,12 @@
     <nav fixed-top class="nav">
       <v-layout row class="lg_nav">
         <v-flex>
-          <v-app-bar app flat>
+          <v-app-bar app flat :color="getNavBarColor">
             <v-app-bar-nav-icon
-              color="#663399"
+              color="#789de1"
               class="d-lg-none darken-6"
               @click="drawer = !drawer"
-            >
-            </v-app-bar-nav-icon>
+            ></v-app-bar-nav-icon>
             <v-btn
               @click="routeHome"
               class="btn-custom"
@@ -21,21 +20,22 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                margin: 0 24px;
               "
             >
               <v-img
                 v-if="$vuetify.theme.dark"
-                lazy-src="/images/logo_night.png"
+                lazy-src="/images/logo.png"
                 max-height="150"
                 max-width="250"
-                src="/images/logo_night.png"
+                src="/images/logo.png"
               ></v-img>
               <v-img
                 v-else
-                lazy-src="/images/logo_day.png"
+                lazy-src="/images/logo.png"
                 max-height="150"
                 max-width="250"
-                src="/images/logo_day.png"
+                src="/images/logo.png"
               ></v-img>
             </v-btn>
             <v-spacer></v-spacer>
@@ -46,12 +46,12 @@
               ></large-size-signed-in-nav>
             </div>
             <v-btn icon v-if="!$vuetify.theme.dark" @click="toggleTheme">
-              <v-icon class="mr-1" color="black light-3"
+              <v-icon class="mr-1" color="teal light-3"
                 >mdi-white-balance-sunny</v-icon
               >
             </v-btn>
             <v-btn icon v-if="$vuetify.theme.dark" @click="toggleTheme">
-              <v-icon color="white light-4">mdi-weather-night</v-icon>
+              <v-icon color="teal light-4">mdi-weather-night</v-icon>
             </v-btn>
           </v-app-bar>
         </v-flex>
@@ -75,9 +75,11 @@
     </nav>
   </v-container>
 </template>
+
 <script>
 import SignedInNav from "@/components/utils/SignedInNav.vue";
 import LargeSizeSignedInNav from "@/components/utils/LargeSizeSignedInNav.vue";
+
 export default {
   components: {
     LargeSizeSignedInNav,
@@ -92,7 +94,6 @@ export default {
           icon: "mdi-weather-night",
           action: "toggleDarkMode",
         },
-
         {
           icon: "mdi-white-balance-sunny",
           action: "toggleLightMode",
@@ -100,10 +101,14 @@ export default {
       ],
     };
   },
+  // computed: {
+  //   getNavBarColor() {
+  //     return this.$vuetify.theme.dark ? "#333" : "primary";
+  //   },
+  // },
   methods: {
     toggleTheme() {
       this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
-      this.listItemtogle = true;
     },
     routeHome() {
       this.$router.push(`/`);
@@ -112,6 +117,7 @@ export default {
   mounted() {},
 };
 </script>
+
 <style scoped>
 .lg_nav {
   display: flex;
@@ -129,10 +135,20 @@ export default {
   color: "#ffffff";
 }
 
+/* Add styles for dark mode */
+.theme--dark .nav {
+  background-color: #333; /* Set your background color for dark mode */
+}
+
+.theme--dark .btn-custom {
+  color: #ccc; /* Adjust text color for dark mode */
+}
+
 .v-responsive__content {
   width: 50%;
   justify-content: center;
 }
+
 .theme--light.v-list-item:not(.v-list-item--active):not(
     .v-list-item--disabled
   ) {
@@ -140,6 +156,7 @@ export default {
   display: flex;
   align-items: center;
 }
+
 .v-list-item {
   display: flex;
   justify-items: center;
@@ -152,11 +169,13 @@ export default {
   display: flex;
   justify-items: flex-end;
 }
+
 .v-list-item--dense .v-list-item__icon,
 .v-list--dense .v-list-item .v-list-item__icon {
   margin: 0;
   display: flex;
 }
+
 .menu-list {
   display: flex;
   justify-content: flex-start;
@@ -165,6 +184,7 @@ export default {
   background-color: transparent;
   padding: 0;
 }
+
 .last-item-button {
   background-color: #061e36;
   color: #fff;
@@ -175,6 +195,7 @@ export default {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   transition: box-shadow 0.3s ease;
 }
+
 .v-icon.v-icon {
   margin-top: 12px;
 }
