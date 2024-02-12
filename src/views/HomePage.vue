@@ -39,7 +39,6 @@ export default {
   padding: 0;
   min-height: 80vh;
   transition: background-color 0.3s ease;
-  /* background-color: #f4f9f6; */
 }
 
 #about,
@@ -51,10 +50,4 @@ export default {
 .footer {
   margin-top: 43px;
 }
-/* #about,
-#projects,
-#contact,
-#skills:hover {
-  background-color: #ffffff;
-} */
 </style>

@@ -1,7 +1,6 @@
 <template>
   <v-container class="main">
     <section class="about-section">
-      <!-- Title -->
       <div class="profile-container">
         <div class="pic-container">
           <div class="broken-circle-container">
@@ -80,19 +79,15 @@ export default {
   },
 };
 </script>
-<style scoped>
-@import "~typeface-work-sans/index.css";
 
+<style scoped>
 .main {
   display: grid;
   place-items: center;
   margin-top: 70px;
   width: 100%;
   transition: background-color 0.3s;
-}
-
-.main:hover {
-  background-color: #ffffff;
+  color: rgb(154, 152, 152);
 }
 
 .about-section {
@@ -101,19 +96,22 @@ export default {
   align-items: start;
   justify-items: flex-start;
   font-family: sans-serif;
+  padding-top: 60px;
 }
 
 .profile-container {
   display: flex;
-  flex-direction: column;
   align-items: start;
   justify-items: center;
-  width: 100%;
+  flex-direction: row-reverse;
+  width: 90%;
+  border: 1px #1bae9c;
 }
 .pic-container {
   width: 40%;
   display: flex;
   justify-content: center;
+  border: 1px dashed #1bae9c;
 }
 
 .broken-circle-container {
@@ -125,10 +123,15 @@ export default {
   border: 1px dashed #1bae9c;
   width: 100%;
 }
+.my-name {
+  font-size: 1.7rem;
+  font-weight: 900;
+}
 .mt-info {
   width: 100%;
   display: flex;
   flex-direction: row;
+  font-size: 1.6rem;
   align-items: center;
   margin-left: 75px;
 }
@@ -175,13 +178,11 @@ export default {
 .about-description {
   margin: 0 34px;
   text-align: center;
-  width: 160%;
+  width: 100%;
   letter-spacing: 0.0112rem;
-  font-family: sans-serif;
   line-height: 26px;
-  font-size: 0.991rem;
-  font-family: Arial, Helvetica, sans-serif;
   font-size: 1rem;
+  font-weight: 100;
 }
 .my-name {
   font-weight: bold;
@@ -223,30 +224,87 @@ export default {
   background-color: #ffffff;
   color: #1bae9c;
 }
-
-/* Media query for larger screens */
-@media (min-width: 768px) {
+@media only screen and (max-width: 767px) {
+  .main {
+    margin-top: 34px;
+  }
+  .about-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+  }
+  .about-description {
+    margin-top: 24px;
+  }
   .profile-container {
-    flex-direction: row-reverse;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+  }
+
+  .pic-container {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    border: 1px dashed #1bae9c;
+  }
+  .broken-circle-container {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    position: relative;
+    border-radius: 50%;
+    border: 1px dashed #ae1b1d;
+    width: 100%;
   }
   .larger-circle {
-    width: 260px;
-    height: 260px;
+    width: 87px;
+    height: 87px;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    border-radius: 50%;
+    border: 1px dashed #181a19;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .broken-circle {
+    width: 248px;
+    height: 248px;
+    border-radius: 50%;
   }
   .image-circle {
-    width: 310px;
-    height: 310px;
+    width: 150px;
+    height: 150px;
   }
-
-  .profile-picture {
-    margin-right: 20px;
+  .my-name {
+    font-size: 2rem;
+    font-weight: 600;
   }
-
-  .about-description {
-    text-align: left;
+  .my-title {
+    font-size: 1rem;
+    padding: 8px;
+    font-weight: 500;
+    color: #1bae9c;
+  }
+  .my-description {
+    font-size: 0.9rem;
+    line-height: 20px;
+  }
+  .download-link.btn {
+    font-size: 0.9rem;
+    margin-top: 20px;
+  }
+  .mt-info {
+    justify-content: center;
+    margin: 0;
+    padding: 23px 12px;
   }
 }
+
 .btn {
   margin-right: 21px;
 }

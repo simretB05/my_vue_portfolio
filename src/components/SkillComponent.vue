@@ -101,6 +101,8 @@ export default {
   margin-top: 70px;
   width: 90%;
   transition: background-color 0.3s;
+  color: rgb(154, 152, 152);
+  padding-top: 30px;
 }
 .title-container {
   text-align: center;
@@ -110,7 +112,7 @@ export default {
   color: #1bae9c;
 }
 .skill-card {
-  transition: box-shadow 0.3s, background-color 0.3s; /* Adding a smooth transition effect */
+  transition: box-shadow 0.3s, background-color 0.3s;
   text-align: center;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -118,7 +120,7 @@ export default {
 
 .skill-card:hover {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  background-color: rgb(215, 239, 239); /* Teal color for the hover effect */
+  background-color: rgb(215, 239, 239);
 }
 
 .title {
@@ -131,5 +133,10 @@ export default {
 .chip-small {
   font-size: 0.8rem;
   padding: 4px 8px;
+}
+@media only screen and (max-width: 767px) {
+  .main {
+    margin-top: 20px;
+  }
 }
 </style>

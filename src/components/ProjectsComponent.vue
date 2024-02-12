@@ -18,6 +18,7 @@
           cols="12"
           sm="6"
           md="4"
+          lg="3"
         >
           <v-card class="card">
             <v-row>
@@ -49,7 +50,6 @@
     </div>
   </v-container>
 </template>
-
 <script>
 export default {
   data() {
@@ -104,6 +104,8 @@ export default {
   margin-top: 70px;
   width: 90%;
   transition: background-color 0.3s;
+  color: rgb(154, 152, 152);
+  padding: 30px 10px;
 }
 
 .card-container {
@@ -114,22 +116,38 @@ export default {
   text-align: center;
   margin-bottom: 20px;
   color: #1bae9c;
+  font-size: 2rem;
 }
 
 .titleText {
   color: #777;
   margin-bottom: 20px;
+  font-size: 1rem;
+  text-align: center;
+}
+
+@media only screen and (max-width: 767px) {
+  .main {
+    margin-top: 34px;
+  }
+  .title-container {
+    font-size: 1.5rem;
+  }
+
+  .titleText {
+    font-size: 0.9rem;
+  }
 }
 
 .card {
   margin-bottom: 20px;
-  transition: background-color 0.3s, transform 0.3s; /* Adding transitions for background-color and transform */
-  transform: translateY(0); /* Initial transform state */
+  transition: background-color 0.3s, transform 0.3s;
+  transform: translateY(0);
 }
 
 .card:hover {
-  background-color: teal; /* Teal color for the hover effect */
-  transform: translateY(-10px); /* Move the card up by 10px on hover */
+  background-color: teal;
+  transform: translateY(-10px);
 }
 
 .card__item__img {
@@ -140,31 +158,31 @@ export default {
 .card__item__details__title {
   font-size: 1.5rem;
   font-weight: bold;
-  transition: transform 0.3s; /* Adding a transition for transform */
+  transition: transform 0.3s;
 }
 
 .card:hover .card__item__details__title {
-  transform: translateY(-10px); /* Move the title up by 10px on hover */
+  transform: translateY(-10px);
 }
 
 .card__item__details__text {
   max-height: 80px;
   overflow: hidden;
   text-overflow: ellipsis;
-  transition: max-height 0.3s, transform 0.3s; /* Adding transitions for max-height and transform */
+  transition: max-height 0.3s, transform 0.3s;
 }
 
 .card:hover .card__item__details__text {
-  max-height: 200px; /* Change to a larger value to reveal more text on hover */
-  transform: translateY(-10px); /* Move the text up by 10px on hover */
+  max-height: 200px;
+  transform: translateY(-10px);
 }
 
 .card__item__details__btn {
   margin-top: 10px;
-  transition: transform 0.3s; /* Adding a transition for transform */
+  transition: transform 0.3s;
 }
 
 .card:hover .card__item__details__btn {
-  transform: translateY(-10px); /* Move the button up by 10px on hover */
+  transform: translateY(-10px);
 }
 </style>

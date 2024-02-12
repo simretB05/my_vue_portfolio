@@ -16,9 +16,8 @@ export default {
   
   <style scoped>
 main {
-  margin: 0;
-  padding: 0;
+  width: 100%;
   display: grid;
-  place-items: start;
+  place-items: center;
 }
 </style>

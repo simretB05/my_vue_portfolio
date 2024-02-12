@@ -3,7 +3,12 @@
     <h1 class="title-container">Contact Me</h1>
 
     <p class="subtitle">
-      Got something on your mind? Drop me a message, and I'll be in touch!
+      Exploring new career opportunities and ready to make a professional
+      connection? I'm actively seeking a fulfilling job opportunity, and your
+      input could be the missing piece to my next chapter. Feel free to drop me
+      a message; I'm eager to discuss potential collaborations, job offers, or
+      any valuable insights you may have. Let's connect and explore the
+      possibilities together!
     </p>
     <div class="contact-info-cont">
       <div class="picture-container">
@@ -89,7 +94,9 @@ export default {
   display: grid;
   place-items: center;
   margin-top: 70px;
-  width: 100%;
+  width: 90%;
+  color: rgb(154, 152, 152);
+  padding-top: 30px;
 }
 
 .contact-info-cont {
@@ -104,14 +111,15 @@ export default {
   background-color: #1bae9c;
 }
 
+.title-container {
+  color: #1bae9c;
+}
 .title-container,
 .subtitle {
   text-align: center;
-  color: #1bae9c;
   margin-bottom: 20px;
 }
 .subtitle {
-  color: black;
   font-size: 1.1rem;
 }
 
@@ -157,8 +165,10 @@ export default {
 .btn:hover {
   background-color: white;
 }
-/* Additional styles for mobile */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 767px) {
+  .main {
+    margin-top: 20px;
+  }
   .contact-info-cont {
     flex-direction: column;
   }
@@ -186,7 +196,7 @@ export default {
 
   .picture-container {
     order: 0;
-    height: 500px; /* Adjust the height as needed */
+    height: 500px;
   }
 
   .form-container {
