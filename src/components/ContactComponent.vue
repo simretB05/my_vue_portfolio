@@ -1,28 +1,65 @@
 <template>
-  <v-container fluid fill-height>
-    <v-row align="center" justify="center">
-      <v-col xs="12" sm="8" md="6">
-        <v-card class="elevation-12">
-          <v-card-title class="headline text-center">Contact Me</v-card-title>
-          <v-card-text>
-            <v-text-field v-model="name" label="Name" outlined></v-text-field>
-            <v-text-field
-              v-model="email"
-              label="Email Address"
-              outlined
-            ></v-text-field>
-            <v-textarea v-model="message" label="Message" outlined></v-textarea>
-          </v-card-text>
-          <v-card-actions>
-            <v-spacer></v-spacer>
-            <v-btn @click="sendMessage" color="primary">Send</v-btn>
-          </v-card-actions>
-        </v-card>
-        <div class="mt-4 text-center">
-          <p>Phone Number: {{ phoneNumber }}</p>
+  <v-container class="main-contact">
+    <h1 class="title-container">Contact Me</h1>
+
+    <p class="subtitle">
+      Got something on your mind? Drop me a message, and I'll be in touch!
+    </p>
+    <div class="contact-info-cont">
+      <div class="picture-container">
+        <v-col cols="12" md="6">
+          <v-img
+            src="/path/to/your/image.jpg"
+            alt="Contact Image"
+            class="contact-image"
+          ></v-img>
+        </v-col>
+      </div>
+      <div class="form-container">
+        <div class="form-div">
+          <v-form v-model="valid" ref="form" class="v-form">
+            <v-row class="cont-row">
+              <v-col cols="12" md="6">
+                <v-text-field
+                  v-model="name"
+                  label="Name"
+                  required
+                  class="name-field"
+                  outlined
+                ></v-text-field>
+              </v-col>
+              <v-col cols="12" md="6">
+                <v-text-field
+                  v-model="email"
+                  label="Email"
+                  required
+                  class="email-field"
+                  outlined
+                ></v-text-field>
+              </v-col>
+              <v-col class="message-cont">
+                <v-textarea
+                  v-model="message"
+                  label="Message"
+                  required
+                  outlined
+                ></v-textarea>
+              </v-col>
+              <v-col cols="12" class="btn-div">
+                <v-btn
+                  class="btn"
+                  @click="submitForm"
+                  :disabled="!valid"
+                  color="white"
+                  outlined
+                  >Send</v-btn
+                >
+              </v-col>
+            </v-row>
+          </v-form>
         </div>
-      </v-col>
-    </v-row>
+      </div>
+    </div>
   </v-container>
 </template>
 
@@ -33,21 +70,132 @@ export default {
       name: "",
       email: "",
       message: "",
-      phoneNumber: "Your Phone Number",
+      valid: false,
     };
   },
   methods: {
-    sendMessage() {
-      console.log(
-        `Name: ${this.name}, Email: ${this.email}, Message: ${this.message}`
-      );
+    submitForm() {
+      console.log("Name:", this.name);
+      console.log("Email:", this.email);
+      console.log("Message:", this.message);
+      this.$refs.form.reset();
     },
   },
 };
 </script>
 
 <style scoped>
-.elevation-12 {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+.main-contact {
+  display: grid;
+  place-items: center;
+  margin-top: 70px;
+  width: 100%;
+}
+
+.contact-info-cont {
+  display: flex;
+  width: 100%;
+}
+
+.picture-container {
+  display: flex;
+  width: 100%;
+  max-width: 50%;
+  background-color: #1bae9c;
+}
+
+.title-container,
+.subtitle {
+  text-align: center;
+  color: #1bae9c;
+  margin-bottom: 20px;
+}
+.subtitle {
+  color: black;
+  font-size: 1.1rem;
+}
+
+.form-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 50%;
+  margin: 0 auto;
+}
+
+.form-div {
+  width: 90%;
+  border: 2px solid #1bae9c;
+  border-left: none;
+  padding: 20px;
+  border-radius: 0 8px 8px 0;
+  display: grid;
+  place-items: center;
+}
+.v-form {
+  display: grid;
+  place-items: center;
+}
+.name-field,
+.email-field,
+.message-cont {
+  margin-bottom: 20px;
+}
+.cont-row {
+  width: 90%;
+}
+.btn-div {
+  display: grid;
+  place-items: end;
+}
+.btn {
+  background-color: #1bae9c;
+}
+.btn :active {
+  background-color: lightgreen;
+}
+.btn:hover {
+  background-color: white;
+}
+/* Additional styles for mobile */
+@media only screen and (max-width: 600px) {
+  .contact-info-cont {
+    flex-direction: column;
+  }
+
+  .picture-container,
+  .form-container {
+    max-width: 100%;
+  }
+
+  .form-div {
+    width: 100%;
+    border-radius: 8px;
+    border-radius: 8px 8px 8px 8px;
+    border: 2px solid #1bae9c;
+  }
+  .contact-info-cont {
+    flex-direction: column;
+  }
+
+  .picture-container,
+  .form-container {
+    max-width: 100%;
+    margin: 10px 0;
+  }
+
+  .picture-container {
+    order: 0;
+    height: 500px; /* Adjust the height as needed */
+  }
+
+  .form-container {
+    order: 1;
+  }
+
+  .form-div {
+    width: 100%;
+    border-radius: 8px;
+  }
 }
 </style>

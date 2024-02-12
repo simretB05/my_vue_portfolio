@@ -1,14 +1,12 @@
 <template>
-  <div class="main">
+  <div class="main-home">
     <nav-bar-menu></nav-bar-menu>
 
     <about-page id="about" />
-    <skill-page id="skills" />
-
     <projects-page id="projects" />
+    <skill-page id="skills" />
     <contact-page id="contact" />
-
-    <footer-nav></footer-nav>
+    <footer-nav class="footer"></footer-nav>
   </div>
 </template>
 
@@ -24,8 +22,8 @@ export default {
   components: {
     AboutPage,
     ContactPage,
-    SkillPage,
     ProjectsPage,
+    SkillPage,
     NavBarMenu,
     FooterNav,
   },
@@ -33,18 +31,30 @@ export default {
 </script>
 
 <style scoped>
-.main {
+.main-home {
   width: 100%;
   display: grid;
   place-items: center;
   font-family: "Roboto";
   padding: 0;
   min-height: 80vh;
+  transition: background-color 0.3s ease;
+  /* background-color: #f4f9f6; */
 }
+
 #about,
 #projects,
 #contact,
 #skills {
   min-height: 20vh;
 }
+.footer {
+  margin-top: 43px;
+}
+/* #about,
+#projects,
+#contact,
+#skills:hover {
+  background-color: #ffffff;
+} */
 </style>

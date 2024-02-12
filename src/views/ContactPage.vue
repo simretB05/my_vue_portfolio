@@ -13,6 +13,10 @@ export default {
   },
 };
 </script>
-    
-    <style scoped>
+<style scoped>
+main {
+  width: 90%;
+  display: grid;
+  place-items: center;
+}
 </style>

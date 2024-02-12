@@ -28,7 +28,7 @@
           </div>
         </div>
         <div class="about-description">
-          <p class="my-name">HI, I'm <span class="my-name">Simret</span></p>
+          <p class="my-name">Hi, I'm Simret</p>
           <p class="my-title">
             A Full Stack Web Developer with a versatile skill set.
           </p>
@@ -41,13 +41,10 @@
                 'font-weight-bold': true,
               }"
             >
-              My skills extend beyond coding; I have practical experience in AWS
-              cloud architecture and a solid understanding of Oracle
-              technologies. Let's harness the power of cloud solutions together
-              to turn innovative ideas into reality. Additionally, I'm
-              proficient in collaborative design using Figma, ensuring a
-              seamless integration of creativity into our cloud-driven
-              solutions.
+              I go beyond just coding and design. With my knowledge in AWS cloud
+              architecture and a solid grasp of Oracle technologies, I'm
+              well-equipped to lead the charge in turning innovative concepts
+              into reality through the power of cloud solutions.
             </p>
             <a href="/path/to/resume.pdf" download class="download-link btn">
               Download my resume
@@ -55,11 +52,11 @@
 
             <div class="mt-info">
               <!-- LinkedIn and GitHub icons with links -->
-              <v-btn icon @click="goToLinkedIn">
-                <v-icon style="color: #1bae9c">mdi-linkedin</v-icon>
+              <v-btn class="btn" icon @click="goToLinkedIn">
+                <v-icon size="39" style="color: #1bae9c">mdi-linkedin</v-icon>
               </v-btn>
-              <v-btn icon @click="goToGitHub">
-                <v-icon style="color: #1bae9c">mdi-github</v-icon>
+              <v-btn class="btn" icon @click="goToGitHub">
+                <v-icon size="39" style="color: #1bae9c">mdi-github</v-icon>
               </v-btn>
             </div>
           </div>
@@ -133,6 +130,7 @@ export default {
   display: flex;
   flex-direction: row;
   align-items: center;
+  margin-left: 75px;
 }
 .discription_cont {
   width: 90%;
@@ -248,5 +246,8 @@ export default {
   .about-description {
     text-align: left;
   }
+}
+.btn {
+  margin-right: 21px;
 }
 </style>

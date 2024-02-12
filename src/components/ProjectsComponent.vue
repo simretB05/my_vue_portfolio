@@ -10,41 +10,43 @@
       these endeavors fuels my belief in my ability to tackle more ambitious
       projects in the future.
     </p>
-    <v-row>
-      <v-col
-        v-for="(project, index) in projects"
-        :key="index"
-        cols="12"
-        sm="6"
-        md="4"
-      >
-        <v-card class="card">
-          <v-row>
-            <v-col cols="12">
-              <v-img
-                :src="project.imageSrc"
-                alt="Project Image"
-                class="card__item__img"
-              ></v-img>
-            </v-col>
-            <v-col cols="12">
-              <v-card-title class="card__item__details__title">{{
-                project.title
-              }}</v-card-title>
+    <div class="card-container">
+      <v-row>
+        <v-col
+          v-for="(project, index) in projects"
+          :key="index"
+          cols="12"
+          sm="6"
+          md="4"
+        >
+          <v-card class="card">
+            <v-row>
+              <v-col cols="12">
+                <v-img
+                  :src="project.imageSrc"
+                  alt="Project Image"
+                  class="card__item__img"
+                ></v-img>
+              </v-col>
+              <v-col cols="12">
+                <v-card-title class="card__item__details__title">{{
+                  project.title
+                }}</v-card-title>
 
-              <v-card-text class="card__item__details__text">{{
-                project.description
-              }}</v-card-text>
-              <a :href="project.link">
-                <v-btn class="card__item__details__btn" color="primary"
-                  >View</v-btn
-                >
-              </a>
-            </v-col>
-          </v-row>
-        </v-card>
-      </v-col>
-    </v-row>
+                <v-card-text class="card__item__details__text">{{
+                  project.description
+                }}</v-card-text>
+                <a :href="project.link">
+                  <v-btn class="card__item__details__btn" color="primary"
+                    >View</v-btn
+                  >
+                </a>
+              </v-col>
+            </v-row>
+          </v-card>
+        </v-col>
+      </v-row>
+    </div>
   </v-container>
 </template>
 
@@ -95,7 +97,6 @@ export default {
   },
 };
 </script>
-
 <style scoped>
 .main {
   display: grid;
@@ -104,6 +105,11 @@ export default {
   width: 90%;
   transition: background-color 0.3s;
 }
+
+.card-container {
+  margin: 32px 0;
+}
+
 .title-container {
   text-align: center;
   margin-bottom: 20px;
@@ -117,11 +123,13 @@ export default {
 
 .card {
   margin-bottom: 20px;
-  transition: background-color 0.3s; /* Adding a smooth transition effect */
+  transition: background-color 0.3s, transform 0.3s; /* Adding transitions for background-color and transform */
+  transform: translateY(0); /* Initial transform state */
 }
 
 .card:hover {
   background-color: teal; /* Teal color for the hover effect */
+  transform: translateY(-10px); /* Move the card up by 10px on hover */
 }
 
 .card__item__img {
@@ -132,15 +140,31 @@ export default {
 .card__item__details__title {
   font-size: 1.5rem;
   font-weight: bold;
+  transition: transform 0.3s; /* Adding a transition for transform */
+}
+
+.card:hover .card__item__details__title {
+  transform: translateY(-10px); /* Move the title up by 10px on hover */
 }
 
 .card__item__details__text {
   max-height: 80px;
   overflow: hidden;
   text-overflow: ellipsis;
+  transition: max-height 0.3s, transform 0.3s; /* Adding transitions for max-height and transform */
+}
+
+.card:hover .card__item__details__text {
+  max-height: 200px; /* Change to a larger value to reveal more text on hover */
+  transform: translateY(-10px); /* Move the text up by 10px on hover */
 }
 
 .card__item__details__btn {
   margin-top: 10px;
+  transition: transform 0.3s; /* Adding a transition for transform */
+}
+
+.card:hover .card__item__details__btn {
+  transform: translateY(-10px); /* Move the button up by 10px on hover */
 }
 </style>

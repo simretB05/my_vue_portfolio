@@ -25,17 +25,17 @@
             >
               <v-img
                 v-if="$vuetify.theme.dark"
-                lazy-src="/images/logo.png"
+                lazy-src="/images/logoo.png"
                 max-height="150"
                 max-width="250"
-                src="/images/logo.png"
+                src="/images/logoo.png"
               ></v-img>
               <v-img
                 v-else
-                lazy-src="/images/logo.png"
+                lazy-src="/images/logoo_day.png"
                 max-height="150"
                 max-width="250"
-                src="/images/logo.png"
+                src="/images/logoo_day.png"
               ></v-img>
             </v-btn>
             <v-spacer></v-spacer>
@@ -127,6 +127,7 @@ export default {
 .nav-div {
   width: 100%;
   display: flex;
+  color: #eff4f5;
 }
 .btn-custom {
   background-color: transparent;
