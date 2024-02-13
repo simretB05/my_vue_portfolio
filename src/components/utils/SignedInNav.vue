@@ -1,30 +1,27 @@
 <template>
   <v-layout class="my-5">
     <v-col>
-      <v-list>
-        <v-img
-          lazy-src="/images/your-image.jpg"
-          max-height="150"
-          max-width="250"
-          src="/images/your-image.jpg"
-        ></v-img>
-
+      <v-list class="menu-list" dense>
         <v-list-item
-          them--light-teal
-          class="px-0"
+          class="menu-list_item"
           v-for="(item, i) in loginLinks"
           :key="i"
           link
           router
           :to="item.route"
-          color="#ffffff"
+          @click="scrollToSection(item.route)"
+          :class="{ 'last-item-button': i === loginLinks.length - 1 }"
         >
-          <v-list-item-icon class="mr-2">
-            <v-icon color="#ffffff">{{ item.icon }}</v-icon>
-          </v-list-item-icon>
-          <v-list-item-content>
+          <v-list-item-content
+            style="
+              font-family: sans-serif;
+              font-size: 1.5rem;
+              font-weight: bolder;
+            "
+          >
             <v-list-item-title
-              class="orange--text text--darken-4 font-weight-bold"
+              class="'text--darken-4': isDarkTheme, 'teal': !isDarkTheme,font-weight-bold mx-3"
+              :style="{ color: isDarkTheme ? '' : '#1bae9c' }"
               >{{ item.title }}</v-list-item-title
             >
           </v-list-item-content>
@@ -36,25 +33,39 @@
 
 <script>
 export default {
+  props: {
+    isDarkTheme: Boolean,
+  },
   data() {
     return {
+      drawer: false,
       loginLinks: [
         {
           title: "About",
-          route: "/about",
-        },
-        {
-          title: "Contact",
-          route: "/contact",
+          route: "#about",
         },
         {
           title: "Projects",
-          route: "/projects",
+          route: "#projects",
+        },
+        {
+          title: "Skills",
+          route: "#skills",
+        },
+
+        {
+          title: "Contact",
+          route: "#contact",
         },
       ],
     };
   },
   methods: {
+    scrollToSection(sectionId) {
+      document.querySelector(sectionId).scrollIntoView({
+        behavior: "smooth",
+      });
+    },
     async logout() {
       if (this.token) {
         try {
