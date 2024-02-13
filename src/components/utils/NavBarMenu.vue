@@ -123,26 +123,23 @@ export default {
   display: flex;
   width: 90%;
 }
-
 .nav-div {
   width: 100%;
   display: flex;
   color: #eff4f5;
 }
 .btn-custom {
-  background-color: transparent;
   border: none;
   box-shadow: none;
   color: "#ffffff";
 }
 
-/* Add styles for dark mode */
 .theme--dark .nav {
-  background-color: #333; /* Set your background color for dark mode */
+  background-color: #333;
 }
 
 .theme--dark .btn-custom {
-  color: #ccc; /* Adjust text color for dark mode */
+  color: #ccc;
 }
 
 .v-responsive__content {
