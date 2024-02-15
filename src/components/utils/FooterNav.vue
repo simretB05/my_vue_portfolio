@@ -18,10 +18,10 @@
           >
             <v-img
               v-if="$vuetify.theme.dark"
-              lazy-src="/images/footer_night_logo.png"
+              lazy-src="/images/footer_day_logo.png"
               max-height="150"
               max-width="250"
-              src="/images/footer_night_logo.png"
+              src="/images/footer_day_logo.png"
             ></v-img>
             <v-img
               v-else

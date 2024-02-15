@@ -3,12 +3,9 @@
     <h1 class="title-container">Contact Me</h1>
 
     <p class="subtitle">
-      Exploring new career opportunities and ready to make a professional
-      connection? I'm actively seeking a fulfilling job opportunity, and your
-      input could be the missing piece to my next chapter. Feel free to drop me
-      a message; I'm eager to discuss potential collaborations, job offers, or
-      any valuable insights you may have. Let's connect and explore the
-      possibilities together!
+      Let's collaborate and work together on your project. Please feel free to
+      get in touch by using the form below. I'm eager to discuss potential
+      opportunities and explore how we can achieve success together.
     </p>
     <div class="contact-info-cont">
       <div class="picture-container">

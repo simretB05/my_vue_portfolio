@@ -25,10 +25,10 @@
             >
               <v-img
                 v-if="$vuetify.theme.dark"
-                lazy-src="/images/logoo.png"
+                lazy-src="/images/logoo_night.png"
                 max-height="150"
                 max-width="250"
-                src="/images/logoo.png"
+                src="/images/logoo_night.png"
               ></v-img>
               <v-img
                 v-else
