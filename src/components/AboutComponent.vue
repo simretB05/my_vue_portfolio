@@ -45,9 +45,7 @@
               well-equipped to lead the charge in turning innovative concepts
               into reality through the power of cloud solutions.
             </p>
-            <a href="/path/to/resume.pdf" download class="download-link btn">
-              Download my resume
-            </a>
+            <pdf-download-btn-util> </pdf-download-btn-util>
 
             <div class="mt-info">
               <!-- LinkedIn and GitHub icons with links -->
@@ -65,7 +63,12 @@
   </v-container>
 </template>
 <script>
+import PdfDownloadBtnUtil from "@/components/utils/PdfDownloadBtnUtil.vue";
 export default {
+  components: {
+    PdfDownloadBtnUtil,
+  },
+
   data() {
     return {
       isDarkTheme: true,
@@ -204,26 +207,7 @@ export default {
   justify-content: center;
   align-items: start;
 }
-.download-link.btn {
-  display: inline-block;
-  padding: 10px 20px;
-  font-size: 1rem;
-  font-weight: bold;
-  text-align: center;
-  text-decoration: none;
-  cursor: pointer;
-  background-color: #1bae9c;
-  color: #ffffff;
-  border: 2px solid #1bae9c;
-  border-radius: 5px;
-  transition: background-color 0.3s, color 0.3s;
-  margin-top: 34px;
-}
 
-.download-link.btn:hover {
-  background-color: #ffffff;
-  color: #1bae9c;
-}
 @media only screen and (max-width: 767px) {
   .main {
     margin-top: 34px;
