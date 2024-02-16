@@ -12,6 +12,7 @@
 
 <script>
 import axios from "axios";
+
 export default {
   methods: {
     downLoad_pdf() {
@@ -30,11 +31,21 @@ export default {
           link.href = window.URL.createObjectURL(blob); // Set the blob as the href
           link.download = "SimretPaulosResume.pdf"; // Set the desired file name
           link.click(); // Simulate a click to trigger the download
+          this.$toast.success("Successfully  Downloaded My Resume PDF", {
+            position: "top-right",
+            timeout: 2000,
+          });
         })
         .catch((err) => {
           // Handle errors if the download fails
-          this.message = "Sorry, there has been an error";
-          console.error(err);
+          err;
+          this.$toast.error(
+            "Sorry, an error occurred while attempting to download the resume. Please try again. If the issue persists, feel free to contact me for assistance.",
+            {
+              position: "top-right",
+              timeout: 4000,
+            }
+          );
         });
     },
   },

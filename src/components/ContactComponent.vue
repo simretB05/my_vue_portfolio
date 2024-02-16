@@ -7,6 +7,7 @@
       get in touch by using the form below. I'm eager to discuss potential
       opportunities and explore how we can achieve success together.
     </p>
+
     <div class="contact-info-cont">
       <div class="picture-container">
         <v-col cols="12" md="6">
@@ -23,40 +24,80 @@
             <v-row class="cont-row">
               <v-col cols="12" md="6">
                 <v-text-field
-                  v-model="name"
+                  ref="user_name"
+                  class="text-custom-class"
+                  v-model="user_name"
+                  :rules="[() => !!user_name || 'This field is required']"
+                  :error-messages="errorMessages"
                   label="Name"
+                  placeholder="name"
                   required
-                  class="name-field"
                   outlined
                 ></v-text-field>
               </v-col>
               <v-col cols="12" md="6">
                 <v-text-field
-                  v-model="email"
-                  label="Email"
+                  v-model="user_email_address"
+                  ref="user_email_address"
+                  :rules="emailRules"
+                  label="E-mail"
                   required
-                  class="email-field"
                   outlined
                 ></v-text-field>
               </v-col>
-              <v-col class="message-cont">
-                <v-textarea
-                  v-model="message"
-                  label="Message"
+              <v-col cols="12" md="12">
+                <v-text-field
+                  class="text-custom-class"
+                  v-model="user_phone_number"
+                  ref="user_phone_number"
+                  :rules="phoneNumberRules"
+                  label="Phone Number"
                   required
                   outlined
+                ></v-text-field>
+              </v-col>
+              <v-col class="message-cont" cols="12" md="12">
+                <v-textarea
+                  ref="user_message"
+                  v-model="user_message"
+                  :rules="[() => !!user_message || 'This field is required']"
+                  :error-messages="errorMessages"
+                  label="Feedback Message"
+                  outlined
+                  dense
+                  style="color: #f35929"
                 ></v-textarea>
               </v-col>
-              <v-col cols="12" class="btn-div">
+              <v-divider class="mt-12"></v-divider>
+              <v-card-actions cols="12">
+                <v-btn text @click="resetForm"> Clear </v-btn>
+                <v-spacer></v-spacer>
+                <v-slide-x-reverse-transition>
+                  <v-tooltip v-if="formHasErrors" left>
+                    <template v-slot:activator="{ on, attrs }">
+                      <v-btn
+                        icon
+                        class="my-0"
+                        v-bind="attrs"
+                        @click="resetForm"
+                        v-on="on"
+                      >
+                        <v-icon>mdi-refresh</v-icon>
+                      </v-btn>
+                    </template>
+                    <span>Refresh form</span>
+                  </v-tooltip>
+                </v-slide-x-reverse-transition>
                 <v-btn
-                  class="btn"
-                  @click="submitForm"
+                  color="primary"
+                  text
                   :disabled="!valid"
-                  color="white"
                   outlined
-                  >Send</v-btn
+                  @click="submitForm"
                 >
-              </v-col>
+                  Send
+                </v-btn>
+              </v-card-actions>
             </v-row>
           </v-form>
         </div>
@@ -66,21 +107,98 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   data() {
     return {
-      name: "",
-      email: "",
-      message: "",
-      valid: false,
+      user_name: null,
+      user_email_address: "",
+      user_phone_number: "",
+      user_message: "",
+      formHasErrors: false,
+      errorMessages: "",
+      rules: {
+        required: (file) => {
+          if (!file) {
+            return "'This field is required'";
+          }
+          return true;
+        },
+      },
+      emailRules: [
+        (v) => !!v || "E-mail is required",
+        (v) => /.+@.+/.test(v) || "E-mail must be valid",
+      ],
+      phoneNumberRules: [
+        (v) => !!v || "Phone number is required",
+        (v) => /^\d{10}$/.test(v) || "Invalid phone number format",
+      ],
     };
   },
+  watch: {
+    form() {
+      this.errorMessages = "";
+    },
+  },
+  computed: {
+    form() {
+      return {
+        user_name: this.user_name,
+        user_email_address: this.user_email_address,
+        user_phone_number: this.user_phone_number,
+        user_message: this.user_message,
+      };
+    },
+  },
   methods: {
-    submitForm() {
-      console.log("Name:", this.name);
-      console.log("Email:", this.email);
-      console.log("Message:", this.message);
-      this.$refs.form.reset();
+    resetForm() {
+      this.errorMessages = [];
+      this.formHasErrors = false;
+      Object.keys(this.form).forEach((f) => {
+        this.$refs[f].reset();
+      });
+    },
+    async submitForm() {
+      console.log(this.form);
+      this.formHasErrors = false;
+      Object.keys(this.form).forEach((f) => {
+        if (!this.form[f]) this.formHasErrors = true;
+        this.$refs[f].validate(true);
+      });
+      if (this.formHasErrors === false) {
+        axios
+          .request({
+            url: `${process.env["VUE_APP_BASE_URL"]}/api/user_contact`,
+            method: "POST",
+            headers: {
+              "Content-Type": "multipart/form-data",
+            },
+            // The data is simply the form we created above
+            data: this.form,
+          })
+          .then((res) => {
+            res;
+            this.$toast.success(
+              "Thanks for getting in touch! I'll get back to you soon.",
+              {
+                position: "top-right",
+                timeout: 4000,
+              }
+            );
+          })
+          .catch((err) => {
+            // Handle errors if the download fails
+            err;
+            this.$toast.error(
+              "Sorry, an error occurred while attempting to download the resume. Please try again. If the issue persists, feel free to contact me for assistance.",
+              {
+                position: "top-right",
+                timeout: 4000,
+              }
+            );
+          });
+      }
     },
   },
 };
