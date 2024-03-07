@@ -116,6 +116,8 @@
 </template>
     <script>
 import Cookies from "vue-cookies";
+import Lottie from "lottie-web";
+
 import { mapActions, mapGetters } from "vuex";
 export default {
   components: {},

@@ -1,8 +1,8 @@
 <template>
   <v-container class="main">
-    <h1 class="title-container">My Web Development Projects</h1>
+    <h1 v-scrollanimation="'fade'"  class="title-container">My Web Development Projects</h1>
 
-    <p class="titleText">
+    <p v-scrollanimation="'fade'" class="titleText">
       These projects represent significant milestones in my web development
       journey, serving as valuable practice grounds. Through their execution,
       I've not only acquired technical proficiency but also honed my
@@ -10,94 +10,87 @@
       these endeavors fuels my belief in my ability to tackle more ambitious
       projects in the future.
     </p>
-    <div class="static-website"><h2>Static Website</h2></div>
-
-    <div class="card-container">
-      <v-row>
-        <v-col
-          v-for="(static_projects, index) in static_projects"
-          :key="index"
-          cols="12"
-          sm="6"
-          md="4"
-          lg="3"
-        >
-          <v-card class="card">
-            <v-row>
-              <v-col cols="12" class="card__item__overlay">
-                <v-img
-                  :src="static_projects.imageSrc"
-                  alt="Project Image"
-                  class="card__item__img"
-                ></v-img>
-                <v-col cols="12" class="card-info">
-                  <div class="get-out">
-                    <v-card-title class="card__item__details__title">{{
-                      static_projects.title
-                    }}</v-card-title>
-                    <v-card-text class="card__item__details__text">{{
-                      static_projects.description
-                    }}</v-card-text>
-                    <a :href="static_projects.link" class="btn" target="blank">
-                      <v-btn class="card__item__details__btn" color="primary"
-                        >View</v-btn
-                      >
-                    </a>
-                  </div>
-                </v-col>
-              </v-col>
-            </v-row>
-          </v-card>
-        </v-col>
-      </v-row>
+    <div v-scrollanimation="'fade'" class="static-website"><h2>Static Website</h2></div>
+    <div name="card-fade" tag="div" class="card-container" ref="staticContainer">
+  <div
+    v-for="( static_projects, index) in  static_projects"
+    :key="index"
+    :data-index="index"
+    class="custom-col" 
+    v-scrollanimation="'stagger'"
+  >
+    <div  class="card">
+      <div class="card__item__overlay">
+        <img
+          :src=" static_projects.imageSrc"
+          alt="Project Image"
+          class="card__item__img"
+        />
+        <div class="card-info">
+          <div class="get-out">
+            <h3 class="card__item__details__title">
+              {{  static_projects.title }}
+            </h3>
+            <p class="card__item__details__text">
+              {{  static_projects.description }}
+            </p>
+            <a :href=" static_projects.link" class="btn">
+              <button class="card__item__details__btn" color="primary">
+                View
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="dynamic-website"><h2>Dynamic Website</h2></div>
+  </div>
+</div>
 
-    <div class="card-container">
-      <v-row>
-        <v-col
-          v-for="(dynamic_projects, index) in dynamic_projects"
-          :key="index"
-          cols="12"
-          sm="6"
-          md="4"
-          lg="3"
-        >
-          <v-card class="card">
-            <v-row>
-              <v-col cols="12" class="card__item__overlay">
-                <v-img
-                  :src="dynamic_projects.imageSrc"
-                  alt="Project Image"
-                  class="card__item__img"
-                ></v-img>
-                <v-col cols="12" class="card-info">
-                  <div class="get-out">
-                    <v-card-title class="card__item__details__title">{{
-                      dynamic_projects.title
-                    }}</v-card-title>
-                    <v-card-text class="card__item__details__text">{{
-                      dynamic_projects.description
-                    }}</v-card-text>
-                    <a :href="dynamic_projects.link" class="btn">
-                      <v-btn class="card__item__details__btn" color="primary"
-                        >View</v-btn
-                      >
-                    </a>
-                  </div>
-                </v-col>
-              </v-col>
-            </v-row>
-          </v-card>
-        </v-col>
-      </v-row>
+    <div    v-scrollanimation="'fade'" class="dynamic-website"><h2>Dynamic Website</h2></div>
+
+    <div name="card-fade" tag="div" class="card-container" ref="dynamicContainer">
+  <div
+    v-for="(dynamic_projects, index) in dynamic_projects"
+    :key="index"
+    :data-index="index"
+    class="custom-col" 
+    v-scrollanimation="'stagger'"
+
+  >
+    <div class="card">
+      <div class="card__item__overlay">
+        <img
+          :src="dynamic_projects.imageSrc"
+          alt="Project Image"
+          class="card__item__img"
+        />
+        <div class="card-info">
+          <div class="get-out">
+            <h3 class="card__item__details__title">
+              {{ dynamic_projects.title }}
+            </h3>
+            <p class="card__item__details__text">
+              {{ dynamic_projects.description }}
+            </p>
+            <a :href="dynamic_projects.link" class="btn">
+              <button class="card__item__details__btn" color="primary">
+                View
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
+</div>
+
   </v-container>
 </template>
 
 <script>
 export default {
-  data() {
+  data()
+  {
     return {
       static_projects: [
         {
@@ -161,81 +154,64 @@ export default {
       ],
     };
   },
-};
-</script>
-
-<style scoped>
-.main {
-  display: grid;
-  place-items: center;
-  margin-top: 70px;
-  width: 90%;
-  transition: background-color 0.3s;
-  color: rgb(154, 152, 152);
-  padding: 30px 10px;
 }
 
-.card-container {
-  margin: 32px 0;
+</script>
+<style scoped>
+.main {
+  padding: 20px;
+  margin-top:40px
 }
 
 .title-container {
   text-align: center;
-  margin-bottom: 20px;
-  color: #1bae9c;
-  font-size: 2rem;
+  color:#43bbac ;
+  transition-delay: .1s;
+
+
 }
 
 .titleText {
-  color: #777;
+  text-align: justify;
   margin-bottom: 20px;
-  font-size: 1rem;
-  text-align: center;
+  transition-delay: .2s;
 }
 
-@media only screen and (max-width: 767px) {
-  .main {
-    margin-top: 34px;
-  }
-  .title-container {
-    font-size: 1.5rem;
-  }
+.static-website h2,
+.dynamic-website h2 {
+  text-align: center; 
+  margin-bottom: 20px;
+  color: #43bbac;
+  margin:27px 0;
+  transition-delay: 1s;
+}
 
-  .titleText {
-    font-size: 0.9rem;
-  }
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.custom-col {
+  width: 100%; 
+  max-width: 300px; 
+  margin-bottom: 20px;
 }
 
 .card {
-  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+  width: 100%; 
+}
+
+.card:hover {
+  transform: scale(1.05);
 }
 
 .card__item__overlay {
   position: relative;
-  overflow: hidden;
-}
-
-.card__item__overlay .card-info {
-  position: absolute;
-  top: 0;
-  right: -100%;
-  width: 100%;
-  height: 100%;
-  background: rgba(228, 233, 230, 0.3);
-  padding: 20px;
-  box-sizing: border-box;
-  transition: right 0.3s;
-  backdrop-filter: blur(4px);
-  border-radius: 10px;
-  color: #9cbbbe;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.card__item__overlay:hover .card-info {
-  right: 0;
 }
 
 .card__item__img {
@@ -243,63 +219,138 @@ export default {
   height: auto;
 }
 
-.card__item__details__title {
-  font-size: 1.5rem;
-  font-weight: bold;
-  transition: transform 0.3s;
+.card-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 10px;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  transform: translateX(100%); 
+  backdrop-filter: blur(10px); 
 }
 
-.card__item__overlay:hover .card__item__details__title {
-  transform: translateY(-10px);
+.card:hover .card-info {
+  background: rgba(228, 230, 231, 0.8); 
+  transform: translateX(0); 
+}
+
+.card__item__details__title {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+  text-align: center; 
+  color: #0d0d0d; 
 }
 
 .card__item__details__text {
-  max-height: 80px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  transition: max-height 0.3s, transform 0.3s;
-}
-
-.card__item__overlay:hover .card__item__details__text {
-  max-height: 200px;
-  transform: translateY(-10px);
-}
-
-.card__item__details__btn {
-  margin-top: 10px;
-  transition: transform 0.3s;
-}
-
-.card__item__overlay:hover .card__item__details__btn {
-  transform: translateY(-10px);
+  font-size: 1rem;
 }
 
 .btn {
-  display: flex;
-  justify-content: center;
-}
-.card__item__details__title {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #181919;
-  font-weight: 900;
-  transition: transform 0.3s;
+  text-decoration: none;
+  color: #fff;
 }
 
-.card__item__details__text {
-  max-height: 80px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  color: #353434;
-  font-weight: 900;
-  transition: max-height 0.3s, transform 0.3s;
+.card__item__details__btn {
+  background-color: #007bff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
 }
-.get-out {
-  background-color: #dcdfdf;
-  width: 90%;
+.before-enter {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 1s ease-out;
 }
-.dynamic-website,
-.static-website {
-  color: #1bae9c;
+
+.enter {
+  opacity: 1;
+  transform: translateY(0px);
 }
+/* .before-fade {
+  opacity: 0;
+  transform: translateX(100px);
+  transition: all 1s cubic-bezier(.41, .01, .57, 1.61);
+
+} 
+
+.fade {
+  opacity: 1;
+  transform: translateX(0px);  /* Corrected from translatex to translateX */
+  /* Include necessary transition properties */
+
+.before-fade {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 1s ease-out;
+}
+
+.fade {
+  opacity: 1;
+  transform: translateY(0px);
+  transition: all 1s ease-in;
+
+}
+
+.custom-col {
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease-in-out, opacity 1s ease-out; 
+  opacity: 0; 
+}
+
+.before-stagger {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 1s ease-out;
+}
+
+.stagger {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.custom-col:nth-child(odd) {
+  transition-delay: 0.2s; 
+}
+.custom-col:nth-child(even) {
+  transition-delay: 0.4s; 
+}
+
+.card:hover {
+  transform: scale(1.05);
+  opacity: 1; 
+}
+
+
+
+
+@media (min-width: 600px) {
+  .custom-col {
+    width: 48%; 
+    max-width: 300px; 
+}
+
+@media (min-width: 768px) {
+  .custom-col {
+    width: 30%; 
+    max-width: 300px; 
+  }
+}
+
+@media (min-width: 1200px) {
+  .main{
+    padding: 60px;
+  }
+  .custom-col {
+    width: 23%; 
+    max-width: 300px; 
+  }
+
+}
+}
+
 </style>

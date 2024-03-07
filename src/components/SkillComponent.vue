@@ -1,9 +1,11 @@
 <template>
   <v-container class="main">
     <div class="title-container">
-      <h1 class="main-title">Check Out My Progressing Skills</h1>
+      <h1 class="main-title"         
+       v-scrollanimation="'stagger'">Check Out My Progressing Skills</h1>
     </div>
-    <div class="title-container">
+    <div class="title-container" v-scrollanimation="'stagger'"
+>
       <p>
         Over the course of the past three years, I have steadfastly dedicated
         myself to the development and enhancement of these skills, a commitment
@@ -18,6 +20,8 @@
         cols="12"
         md="6"
         lg="4"
+        v-scrollanimation="'stagger'"
+
       >
         <v-card
           class="pa-3 ma-2 skill-card"
@@ -133,6 +137,28 @@ export default {
 .chip-small {
   font-size: 0.8rem;
   padding: 4px 8px;
+}
+.before-stagger {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 1s ease-out;
+}
+
+.stagger {
+  opacity: 1;
+  transform: translateY(0px);
+}
+.before-fade {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 1s ease-out;
+}
+
+.fade {
+  opacity: 1;
+  transform: translateY(0px);
+  transition: all 1s ease-in;
+
 }
 @media only screen and (max-width: 767px) {
   .main {

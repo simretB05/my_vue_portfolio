@@ -12,16 +12,7 @@
             <v-btn
               @click="routeHome"
               class="btn-custom"
-              style="
-                background-color: transparent;
-                border: none;
-                box-shadow: none;
-                color: black;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                margin: 0 24px;
-              "
+              v-scrollanimation="'enter'"
             >
               <v-img
                 v-if="$vuetify.theme.dark"
@@ -201,5 +192,17 @@ export default {
 .last-item-button:active {
   transform: scale(0.95);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+.before-enter {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all .5s ease-out;
+}
+
+.enter {
+  opacity: 1;
+  transform: translateY(0px);
+  transition: all .5s ease-in;
+
 }
 </style>

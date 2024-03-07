@@ -1,14 +1,14 @@
 <template>
   <v-container class="main-contact">
-    <h1 class="title-container">Contact Me</h1>
+    <h1 class="title-container" v-scrollanimation="'enter'">Contact Me</h1>
 
-    <p class="subtitle">
+    <p class="subtitle" v-scrollanimation="'fade'">
       Let's collaborate and work together on your project. Please feel free to
       get in touch by using the form below. I'm eager to discuss potential
       opportunities and explore how we can achieve success together.
     </p>
 
-    <div class="contact-info-cont">
+    <div class="contact-info-cont"  v-scrollanimation="'stagger'" >
       <div class="picture-container">
         <v-col cols="12" md="6">
           <v-img
@@ -160,7 +160,6 @@ export default {
       });
     },
     async submitForm() {
-      console.log(this.form);
       this.formHasErrors = false;
       Object.keys(this.form).forEach((f) => {
         if (!this.form[f]) this.formHasErrors = true;
@@ -208,16 +207,18 @@ export default {
 .main-contact {
   display: grid;
   place-items: center;
-  margin-top: 70px;
   width: 90%;
   color: rgb(154, 152, 152);
-  padding-top: 30px;
+  margin-top: 70px;
 }
+
 
 .contact-info-cont {
   display: flex;
   width: 100%;
+
 }
+
 
 .picture-container {
   display: flex;
@@ -228,6 +229,19 @@ export default {
 
 .title-container {
   color: #1bae9c;
+  opacity: 0;
+}
+.before-enter {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 1s ease-out;
+}
+
+.enter {
+  opacity: 1;
+  transform: translateY(0px);
+  transition: all 1s ease-in;
+
 }
 .title-container,
 .subtitle {
@@ -279,6 +293,29 @@ export default {
 }
 .btn:hover {
   background-color: white;
+}
+
+.before-fade {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 1s ease-out;
+}
+
+.fade {
+  opacity: 1;
+  transform: translateY(0px);
+  transition: all 1s ease-in;
+
+}
+.before-stagger {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 1s ease-out;
+}
+
+.stagger {
+  opacity: 1;
+  transform: translateY(0px);
 }
 @media only screen and (max-width: 767px) {
   .main {

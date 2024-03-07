@@ -31,7 +31,6 @@
               src="/images/footer_day_logo.png"
             ></v-img>
           </v-btn>
-          <Lottie :options="animationOptions" width="300px" height="300px" />
 
           <div class="mt-info animated-content">
             <p class="mt-2">Full Stack Web Developer - Alberta, Canada</p>
@@ -82,11 +81,8 @@
 </template>
 
 <script>
-import Lottie from "lottie-vuejs";
 export default {
-  components: {
-    Lottie,
-  },
+  components: {},
   methods: {
     goToLinkedIn() {
       // Redirect to  LinkedIn profile
@@ -123,19 +119,15 @@ export default {
   font-size: 1rem;
 }
 .mt-info {
-  display: flex;
+  display: grid;
   width: 300px;
-  justify-content: start;
+  place-items: center;
   flex-direction: column;
   margin-left: 63px;
   font-size: 0.9rem;
 }
 .mt-phone {
-  display: flex;
   width: 300px;
-  justify-content: start;
-  flex-direction: column;
-  margin-left: 76px;
 }
 .copy-right {
   color: #1bae9c;

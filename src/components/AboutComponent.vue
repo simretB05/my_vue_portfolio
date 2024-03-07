@@ -2,29 +2,21 @@
   <v-container class="main">
     <section class="about-section">
       <div class="profile-container">
-        <div class="pic-container">
-          <div class="broken-circle-container">
-            <div class="broken-circle">
-              <div class="broken-circle larger-circle">
-                <div class="image-circle larger-circle">
-                  <v-img
-                    v-if="$vuetify.theme.dark"
-                    lazy-src="/images/hero55.jpg"
-                    max-height="100%"
-                    max-width="100%"
-                    src="/images/hero55.jpg"
-                  ></v-img>
-                  <v-img
-                    v-else
-                    lazy-src="/images/hero.jpg"
-                    max-height="100%"
-                    max-width="100%"
-                    src="/images/hero.jpg"
-                  ></v-img>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div class="broken-circle">
+          <v-img
+            v-if="$vuetify.theme.dark"
+            lazy-src="/images/2W6A1392.png"
+            max-height="200px"
+            max-width="200px"
+            src="/images/2W6A1392.png"
+          ></v-img>
+          <v-img
+            v-else
+            lazy-src="/images/2W6A1392.png"
+            max-height="200px"
+            max-width="200px"
+            src="/images/2W6A1392.png"
+          ></v-img>
         </div>
         <div class="about-description">
           <p class="my-name">Hi, I'm Simret</p>
@@ -64,6 +56,7 @@
 </template>
 <script>
 import PdfDownloadBtnUtil from "@/components/utils/PdfDownloadBtnUtil.vue";
+
 export default {
   components: {
     PdfDownloadBtnUtil,
@@ -105,9 +98,9 @@ export default {
 .profile-container {
   display: flex;
   align-items: start;
-  justify-items: center;
+  justify-content: flex-start; 
   flex-direction: row-reverse;
-  width: 90%;
+  width: 100%;
   border: 1px #1bae9c;
 }
 .pic-container {
@@ -152,16 +145,12 @@ export default {
   color: #1bae9c;
 }
 .broken-circle {
-  width: 378px;
-  height: 378px;
-  border-radius: 50%;
 }
 
 .profile-picture img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
+  border-radius: 0;
 }
 
 .larger-circle {
@@ -198,8 +187,8 @@ export default {
 }
 
 .image-circle {
-  width: 259px;
-  height: 259px;
+  width: 459px;
+  height: 459px;
   border-radius: 50%;
   border: 1px dashed #1bae9c;
   overflow: hidden;

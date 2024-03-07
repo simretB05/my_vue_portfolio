@@ -3,7 +3,7 @@
     <v-layout class="custom-c">
       <v-card class="custom-c">
         <v-list class="menu-list" dense>
-          <v-list-item
+          <v-list-item v-scrollanimation="'enter'"
             class="menu-list_item"
             v-for="(item, i) in loginLinks"
             :key="i"
@@ -109,6 +109,19 @@ export default {
 
 .v-icon.v-icon {
   margin-top: 12px;
+}
+
+.before-enter {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all .5s ease-out;
+}
+
+.enter {
+  opacity: 1;
+  transform: translateY(0px);
+  transition: all .5s ease-in;
+
 }
 /* Bounce effect on click */
 </style>

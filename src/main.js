@@ -5,9 +5,9 @@ import Toast from "vue-toastification";
 import "vue-toastification/dist/index.css";
 import store from './store';
 import vuetify from './plugins/vuetify';
+import ScrollAnimation from '@/components/utils/ScrollAnimation'
 
-
-
+Vue.directive( 'scrollanimation', ScrollAnimation )
 Vue.config.productionTip = false;
 
 const options = {
@@ -19,7 +19,7 @@ const options = {
   containerClassName: "my-toast-container",
   bodyClassName: "my-toast-body",
 };
-Vue.use( Toast, options );
+Vue.use( Toast, options, );
 new Vue( {
   router,
   store,
