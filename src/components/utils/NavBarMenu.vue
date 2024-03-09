@@ -5,7 +5,7 @@
         <v-flex>
           <v-app-bar app flat>
             <v-app-bar-nav-icon
-              color="#789de1"
+              color="#43bbac"
               class="d-lg-none darken-6"
               @click="drawer = !drawer"
             ></v-app-bar-nav-icon>
@@ -16,17 +16,17 @@
             >
               <v-img
                 v-if="$vuetify.theme.dark"
-                lazy-src="/images/logoo_night.png"
+                lazy-src="/images/sim_logo.png"
                 max-height="150"
                 max-width="250"
-                src="/images/logoo_night.png"
+                src="/images/sim_logo.png"
               ></v-img>
               <v-img
                 v-else
-                lazy-src="/images/logoo_day.png"
+                lazy-src="/images/sim_logo.png"
                 max-height="150"
                 max-width="250"
-                src="/images/logoo_day.png"
+                src="/images/sim_logo.png"
               ></v-img>
             </v-btn>
             <v-spacer></v-spacer>
@@ -36,12 +36,16 @@
                 class="d-none d-lg-block"
               ></large-size-signed-in-nav>
             </div>
-            <v-btn icon v-if="!$vuetify.theme.dark" @click="toggleTheme">
+            <v-btn icon v-if="!$vuetify.theme.dark" @click="toggleTheme" 
+              v-scrollanimation="'enter'">
               <v-icon class="mr-1" color="teal light-3"
-                >mdi-white-balance-sunny</v-icon
+                >mdi-white-balance-sunny</v-icon               
+
               >
             </v-btn>
-            <v-btn icon v-if="$vuetify.theme.dark" @click="toggleTheme">
+            <v-btn icon v-if="$vuetify.theme.dark" @click="toggleTheme"             
+              v-scrollanimation="'enter'"
+>
               <v-icon color="teal light-4">mdi-weather-night</v-icon>
             </v-btn>
           </v-app-bar>
@@ -58,7 +62,8 @@
         <v-card-title>
           <v-spacer></v-spacer>
           <v-btn icon @click="drawer = false">
-            <v-icon color="#ffffff">mdi-close</v-icon>
+            <v-icon 
+            color="#43bbac">mdi-close</v-icon>
           </v-btn>
         </v-card-title>
         <signed-in-nav></signed-in-nav>
@@ -100,9 +105,6 @@ export default {
   methods: {
     toggleTheme() {
       this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
-    },
-    routeHome() {
-      this.$router.push(`/`);
     },
   },
   mounted() {},

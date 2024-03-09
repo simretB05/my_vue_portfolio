@@ -1,7 +1,8 @@
 <template>
   <v-layout class="my-5">
     <v-col>
-      <v-list class="menu-list" dense>
+      <v-list class="menu-list" dense          
+       v-scrollanimation="'enter'">
         <v-list-item
           class="menu-list_item"
           v-for="(item, i) in loginLinks"
@@ -9,6 +10,11 @@
           link
           router
           :to="item.route"
+          style="
+              font-family: sans-serif;
+              font-size: 2rem;
+              font-weight: bold;
+            "
           @click="scrollToSection(item.route)"
           :class="{ 'last-item-button': i === loginLinks.length - 1 }"
         >
@@ -83,6 +89,18 @@ export default {
 
 <style  scoped>
 .my-5 {
-  margin-top: 30px;
+  margin-top: 40px;
+}
+.before-enter {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all .5s ease-out;
+}
+
+.enter {
+  opacity: 1;
+  transform: translateY(0px);
+  transition: all .5s ease-in;
+
 }
 </style>

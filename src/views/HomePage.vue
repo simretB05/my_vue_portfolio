@@ -46,6 +46,7 @@ export default {
 #contact,
 #skills {
   min-height: 20vh;
+  margin-top: 40px;
 }
 .footer {
   margin-top: 43px;

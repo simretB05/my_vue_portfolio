@@ -160,7 +160,7 @@ export default {
 <style scoped>
 .main {
   padding: 20px;
-  margin-top:40px
+  margin-top:60px
 }
 
 .title-container {
@@ -172,7 +172,7 @@ export default {
 }
 
 .titleText {
-  text-align: justify;
+  text-align: center;
   margin-bottom: 20px;
   transition-delay: .2s;
 }
@@ -325,10 +325,11 @@ export default {
   opacity: 1; 
 }
 
-
-
-
 @media (min-width: 600px) {
+  .main{
+    padding: 40px;
+  margin-top:80px
+  }
   .custom-col {
     width: 48%; 
     max-width: 300px; 
@@ -338,6 +339,8 @@ export default {
   .custom-col {
     width: 30%; 
     max-width: 300px; 
+    margin-top: 78px;
+
   }
 }
 
