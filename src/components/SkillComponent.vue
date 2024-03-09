@@ -102,7 +102,7 @@ export default {
 .main {
   display: grid;
   place-items: center;
-  margin-top: 70px;
+  margin-top: 40px;
   width: 90%;
   transition: background-color 0.3s;
   color: rgb(154, 152, 152);

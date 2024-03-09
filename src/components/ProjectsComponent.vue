@@ -10,7 +10,10 @@
       these endeavors fuels my belief in my ability to tackle more ambitious
       projects in the future.
     </p>
-    <div v-scrollanimation="'fade'" class="static-website"><h2>Static Website</h2></div>
+    <div v-scrollanimation="'fade'" class="static-website"><h2>Static Website</h2>
+      <p  class="static_text">
+    My static sights are hosted on Amazon S3, leveraging the power of scalable object storage for reliable delivery of images, stylesheets, and other static assets globally. This enhances website performance, leading to quick loading times and a seamless user experience.
+</p></div>
     <div name="card-fade" tag="div" class="card-container" ref="staticContainer">
   <div
     v-for="( static_projects, index) in  static_projects"
@@ -46,7 +49,10 @@
   </div>
 </div>
 
-    <div    v-scrollanimation="'fade'" class="dynamic-website"><h2>Dynamic Website</h2></div>
+    <div    v-scrollanimation="'fade'" class="dynamic-website"><h2>Dynamic Website</h2>
+      <p class="dynamic_text">
+        Amazon EC2 instances host my backend server and web application. The backend uses RDS MariaDB on EC2, ensuring secure and efficient data management. This combination creates a scalable infrastructure supporting the dynamic nature of my web application, ensuring a responsive user experience.
+</p></div>
 
     <div name="card-fade" tag="div" class="card-container" ref="dynamicContainer">
   <div
@@ -159,8 +165,8 @@ export default {
 </script>
 <style scoped>
 .main {
-  padding: 20px;
-  margin-top:60px
+  padding: 10px;
+  margin: 45px 0;
 }
 
 .title-container {
@@ -174,7 +180,10 @@ export default {
 .titleText {
   text-align: center;
   margin-bottom: 20px;
+  padding: 20px;
   transition-delay: .2s;
+  color:#a2a0a0 ;
+  font-weight: 400;
 }
 
 .static-website h2,
@@ -182,7 +191,7 @@ export default {
   text-align: center; 
   margin-bottom: 20px;
   color: #43bbac;
-  margin:27px 0;
+  margin:17px 0;
   transition-delay: 1s;
 }
 
@@ -231,7 +240,15 @@ export default {
   transform: translateX(100%); 
   backdrop-filter: blur(10px); 
 }
-
+.static_text, .dynamic_text{
+  font-size: 1rem;
+  line-height: 1.5;
+  text-align: center;
+  color:#a2a0a0 ;
+  font-weight: 400;
+  padding: 10px;
+  margin-bottom: 20px;
+}
 .card:hover .card-info {
   background: rgba(228, 230, 231, 0.8); 
   transform: translateX(0); 
@@ -325,10 +342,13 @@ export default {
   opacity: 1; 
 }
 
+
+
+
 @media (min-width: 600px) {
   .main{
     padding: 40px;
-  margin-top:80px
+     margin-top:60px
   }
   .custom-col {
     width: 48%; 
@@ -339,8 +359,6 @@ export default {
   .custom-col {
     width: 30%; 
     max-width: 300px; 
-    margin-top: 78px;
-
   }
 }
 
