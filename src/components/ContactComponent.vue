@@ -12,7 +12,10 @@
       <div class="picture-container">
         <v-col cols="12" md="6">
           <v-img
-            src="/path/to/your/image.jpg"
+             lazy-src="/images/my.jpg"
+              max-height="400px"
+              max-width="300"
+              src="/images/my.jpg"
             alt="Contact Image"
             class="contact-image"
           ></v-img>
@@ -222,6 +225,9 @@ export default {
 
 .picture-container {
   display: flex;
+  justify-content: center;
+  align-content: center;
+  padding-top: 60px;
   width: 100%;
   max-width: 50%;
   background-color: #1bae9c;
@@ -261,7 +267,7 @@ export default {
 }
 
 .form-div {
-  width: 90%;
+  width: 100%;
   border: 2px solid #1bae9c;
   border-left: none;
   padding: 20px;

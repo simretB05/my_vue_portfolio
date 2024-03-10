@@ -15,7 +15,7 @@ export default {
 </script>
 <style scoped>
 main {
-  width: 90%;
+  width: 100%;
   display: grid;
   place-items: center;
 }
