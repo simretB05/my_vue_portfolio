@@ -16,7 +16,7 @@
             >
               <v-img
                 v-if="$vuetify.theme.dark"
-                lazy-src="/images/sim_logo.png"
+                lazy-src="/images//sim_logo.png"
                 max-height="150"
                 max-width="250"
                 src="/images/sim_logo.png"

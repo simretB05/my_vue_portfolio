@@ -69,10 +69,11 @@ export default {
   },
   methods: {
     goToLinkedIn() {
-      // Implement your LinkedIn redirection logic here
+      window.open("https://www.linkedin.com/in/simret-paulos-45b42b10b/", "_blank");
     },
+
     goToGitHub() {
-      // Implement your GitHub redirection logic here
+      window.open("https://github.com/simretB05", "_blank");
     },
   },
 };
