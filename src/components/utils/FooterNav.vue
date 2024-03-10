@@ -2,7 +2,7 @@
   <div class="footer">
     <div class="fo-div">
       <div class="footer-content">
-        <div class="logo-and-info">
+        <div class="logo-and-info" v-scrollanimation="'enter'">
           <v-btn
             @click="routeHome"
             class="btn-custom"
@@ -41,7 +41,7 @@
           </div>
         </div>
 
-        <div class="social-media">
+        <div class="social-media" v-scrollanimation="'enter'">
           <!-- LinkedIn icon and link -->
           <button @click="goToLinkedIn" class="animated-link">
             <i class="mdi mdi-linkedin" style="font-size: 34px; color: white;"></i>
@@ -53,7 +53,7 @@
         </div>
       </div>
 
-      <div class="copy-right animated-content">
+      <div class="copy-right animated-content" v-scrollanimation="'enter'">
         <p>
           © 2024 Simret Paulos - All rights reserved.
           Powered by Vue.js
@@ -145,7 +145,18 @@ export default {
   margin-top: 10px; 
   text-align: center;
 }
+.before-enter {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all .5s ease-out;
+}
 
+.enter {
+  opacity: 1;
+  transform: translateY(0px);
+  transition: all .5s ease-in;
+
+}
 
 @media only screen and (min-width: 600px) {
   /* Adjust styles for larger screens if needed */
