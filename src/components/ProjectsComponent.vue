@@ -12,7 +12,7 @@
     </p>
     <div v-scrollanimation="'fade'" class="static-website"><h2>Static Website</h2>
       <p  class="static_text">
-    My static sights are hosted on Amazon S3, leveraging the power of scalable object storage for reliable delivery of images, stylesheets, and other static assets globally. This enhances website performance, leading to quick loading times and a seamless user experience.
+        My static sites are hosted on Amazon S3, leveraging the power of scalable object storage for reliable delivery of images, stylesheets, and other static assets globally. This enhances website performance, leading to quick loading times and a seamless user experience.
 </p></div>
     <div name="card-fade" tag="div" class="card-container" ref="staticContainer">
   <div
@@ -37,8 +37,8 @@
             <p class="card__item__details__text">
               {{  static_projects.description }}
             </p>
-            <a :href=" static_projects.link" class="btn">
-              <button class="card__item__details__btn" target="blank" color="primary">
+            <a :href=" static_projects.link" class="btn"  target="blank">
+              <button class="card__item__details__btn" color="primary">
                 View
               </button>
             </a>
@@ -51,7 +51,7 @@
 
     <div    v-scrollanimation="'fade'" class="dynamic-website"><h2>Dynamic Website</h2>
       <p class="dynamic_text">
-        Amazon EC2 instances host my backend server and web application. The backend uses RDS MariaDB on EC2, ensuring secure and efficient data management. This combination creates a scalable infrastructure supporting the dynamic nature of my web application, ensuring a responsive user experience.
+        Amazon EC2 instances host my backend server and web application. The backend uses RDS MariaDB on Amazon EC2, ensuring secure and efficient data management. This combination creates a scalable infrastructure supporting the dynamic nature of my web application, ensuring a responsive user experience.
 </p></div>
 
     <div name="card-fade" tag="div" class="card-container" ref="dynamicContainer">
@@ -102,7 +102,7 @@ export default {
         {
           title: "Project 1",
           description:
-            "This is a music band website, an assignment for a boot camp class. The main goal of the project is to interact with React components using ReactHooks to Create a CRUD system with JSON Server API.",
+          "Static website designed for Swan City Pizzeria, a local business. Demonstrates design skills using CSS, HTML, and some JavaScript to create an engaging and visually appealing online presence.",
           link: "http://swanpizzaria12.s3-website-us-east-1.amazonaws.com",
           imageSrc: "/images/swan.jpg",
         },
@@ -133,28 +133,28 @@ export default {
           title: "Project 1",
           description:
             "This is a music band website, an assignment for a boot camp class. The main goal of the project is to interact with React components using ReactHooks to Create a CRUD system with JSON Server API.",
-          link: "https://taupe-stroopwafel-935142.netlify.app/",
+          link: "https://sunny-bonbon-17baef.netlify.app/",
           imageSrc: "/images/bandsite22.jpg",
         },
         {
           title: "Project 2",
           description:
-            "Essential oil is a personal project I built to practice handling an E-commerce cart. I used JavaScript for adding and deleting to and from a Cart. The website design inspiration came from similar essential oil websites but with my own UI design touch.",
-          link: "https://taupe-stroopwafel-935142.netlify.app/",
+          "Portfolio website showcasing skills and projects, built with Vue.js, Vuetify, and deployed on AWS EC2. Utilizes MariaDB RDS for data storage.",          
+           link:"https://portfolio.simret.codes",
           imageSrc: "/images/my_portfolio.png",
         },
         {
           title: "Project 3",
           description:
-            "URL Shortening website. The project applies URL shortening API with Javascript. The main focus of this project was to practice working with Groups on Git and Github. Managing Projects, delegating, Creating issues, and deleting them when done.",
-          link: "https://taupe-stroopwafel-935142.netlify.app/",
+          "Dorm Finder website built with Vue.js and Vuetify, deployed on AWS EC2. Utilizes MariaDB RDS for efficient data management, following a similar concept to the food ordering website.",
+          link: "https://dormfinder.simret.codes",
           imageSrc: "/images/dorm_finder.jpg",
         },
         {
           title: "Project 4",
           description:
-            "Bookmark website. Group project that uses Authentication for login and signup using the firebase database. Apart from the main authentication focus, the project helped practice with Groups on Git and Github. Managing Projects, delegating, Creating issues, and deleting them when done",
-          link: "https://taupe-stroopwafel-935142.netlify.app/",
+          "Food ordering website with a custom design. Focuses on seamless communication between the database, backend, and frontend for efficient order processing.",
+          link: "https://foodie.simret.codes",
           imageSrc: "/images/foodi.jpg",
         },
       ],
@@ -230,15 +230,18 @@ export default {
 
 .card-info {
   position: absolute;
+  height: 100%;
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(0, 0, 0, 0.8);
-  color: #fff;
   padding: 10px;
   transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
   transform: translateX(100%); 
-  backdrop-filter: blur(10px); 
+  backdrop-filter: blur(1px); 
+  border-radius: 10px;
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
 }
 .static_text, .dynamic_text{
   font-size: 1rem;
@@ -250,7 +253,7 @@ export default {
   margin-bottom: 20px;
 }
 .card:hover .card-info {
-  background: rgba(228, 230, 231, 0.8); 
+  background: rgba(247, 248, 248, 0.8); 
   transform: translateX(0); 
 }
 
@@ -258,23 +261,32 @@ export default {
   font-size: 1.2rem;
   margin-bottom: 5px;
   text-align: center; 
-  color: #0d0d0d; 
+  color:#43bbac; 
 }
 
 .card__item__details__text {
-  font-size: 1rem;
+  color: #2f2f2f;
+  font-size: .8rem;
+  text-align: center;
+  padding: 2px;
 }
 
 .btn {
   text-decoration: none;
   color: #fff;
+  justify-self: center;
+  border-radius: 25px;
 }
 
 .card__item__details__btn {
-  background-color: #007bff;
+  background-color: #43bbac;
   border: none;
-  padding: 5px 10px;
+  padding: 3px 8px;
   cursor: pointer;
+  font-size: .8rem;
+  border-radius: 10px;
+  margin: 10px auto;
+
 }
 .before-enter {
   opacity: 0;
@@ -342,7 +354,14 @@ export default {
   opacity: 1; 
 }
 
-
+.get-out{
+  display: grid;
+  place-items: center;
+  background-color: #dcdfdc;
+  height: 96%;
+  margin: 0 auto;
+  padding: 4px;
+}
 
 
 @media (min-width: 600px) {

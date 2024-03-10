@@ -102,11 +102,10 @@ export default {
 .main {
   display: grid;
   place-items: center;
-  margin-top: 40px;
   width: 90%;
   transition: background-color 0.3s;
   color: rgb(154, 152, 152);
-  padding-top: 30px;
+  margin-top: 50px;
 }
 .title-container {
   text-align: center;
