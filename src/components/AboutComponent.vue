@@ -208,6 +208,28 @@ export default {
   opacity: 1;
   transform: translateY(0px);
 }
+.mt-info{
+
+  display: flex;
+}
+.btn {
+  border: none;
+  text-align: center;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+  grid-template-columns: 1fr;
+  transition: background-color 0.5s ease;
+  transition: background-color 0.3s, color 0.3s;
+  cursor: pointer;
+}
+.btn:hover {
+  box-shadow: 0 3px 3px rgba(21, 181, 167, 0.4);
+}
+.btn:active {
+  transform: translateY(3px);
+  box-shadow: none;
+}
 
 /* Responsive Styles */
 @media (max-width: 768px) {

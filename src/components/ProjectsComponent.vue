@@ -38,7 +38,7 @@
               {{  static_projects.description }}
             </p>
             <a :href=" static_projects.link" class="btn">
-              <button class="card__item__details__btn" color="primary">
+              <button class="card__item__details__btn" target="blank" color="primary">
                 View
               </button>
             </a>
@@ -78,7 +78,7 @@
             <p class="card__item__details__text">
               {{ dynamic_projects.description }}
             </p>
-            <a :href="dynamic_projects.link" class="btn">
+            <a :href="dynamic_projects.link"  target="blank" class="btn">
               <button class="card__item__details__btn" color="primary">
                 View
               </button>
@@ -103,28 +103,28 @@ export default {
           title: "Project 1",
           description:
             "This is a music band website, an assignment for a boot camp class. The main goal of the project is to interact with React components using ReactHooks to Create a CRUD system with JSON Server API.",
-          link: "https://sunny-bonbon-17baef.netlify.app",
-          imageSrc: "/images/bandsite22.jpg",
+          link: "http://swanpizzaria12.s3-website-us-east-1.amazonaws.com",
+          imageSrc: "/images/swan.jpg",
         },
         {
           title: "Project 2",
           description:
             "Essential oil is a personal project I built to practice handling an E-commerce cart. I used JavaScript for adding and deleting to and from a Cart. The website design inspiration came from similar essential oil websites but with my own UI design touch.",
-          link: "https://sprightly-cannoli-87a94c.netlify.app",
+          link: "http://essentialoils11.s3-website-us-east-1.amazonaws.com",
           imageSrc: "/images/essentialOil.jpg",
         },
         {
           title: "Project 3",
           description:
             "URL Shortening website. The project applies URL shortening API with Javascript. The main focus of this project was to practice working with Groups on Git and Github. Managing Projects, delegating, Creating issues, and deleting them when done.",
-          link: "https://url-shortening-123.netlify.app/",
+          link: "http://urlshortningweb.s3-website-us-east-1.amazonaws.com",
           imageSrc: "/images/UrlShortning.jpg",
         },
         {
           title: "Project 4",
           description:
             "Bookmark website. Group project that uses Authentication for login and signup using the firebase database. Apart from the main authentication focus, the project helped practice with Groups on Git and Github. Managing Projects, delegating, Creating issues, and deleting them when done",
-          link: "https://determined-brahmagupta-fbb485.netlify.app/",
+          link: "http://bookmark12.s3-website-us-east-1.amazonaws.com",
           imageSrc: "/images/bookmars.jpg",
         },
       ],
@@ -141,21 +141,21 @@ export default {
           description:
             "Essential oil is a personal project I built to practice handling an E-commerce cart. I used JavaScript for adding and deleting to and from a Cart. The website design inspiration came from similar essential oil websites but with my own UI design touch.",
           link: "https://taupe-stroopwafel-935142.netlify.app/",
-          imageSrc: "/images/essentialOil.jpg",
+          imageSrc: "/images/my_portfolio.png",
         },
         {
           title: "Project 3",
           description:
             "URL Shortening website. The project applies URL shortening API with Javascript. The main focus of this project was to practice working with Groups on Git and Github. Managing Projects, delegating, Creating issues, and deleting them when done.",
           link: "https://taupe-stroopwafel-935142.netlify.app/",
-          imageSrc: "/images/essentialOil.jpg",
+          imageSrc: "/images/dorm_finder.jpg",
         },
         {
           title: "Project 4",
           description:
             "Bookmark website. Group project that uses Authentication for login and signup using the firebase database. Apart from the main authentication focus, the project helped practice with Groups on Git and Github. Managing Projects, delegating, Creating issues, and deleting them when done",
           link: "https://taupe-stroopwafel-935142.netlify.app/",
-          imageSrc: "/images/essentialOil.jpg",
+          imageSrc: "/images/foodi.jpg",
         },
       ],
     };
