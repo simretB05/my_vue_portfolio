@@ -11,6 +11,7 @@
           router
           :to="item.route"
           style="
+          color:white;
               font-family: sans-serif;
               font-size: 2rem;
               font-weight: bold;
@@ -27,7 +28,7 @@
           >
             <v-list-item-title
               class="'text--darken-4': isDarkTheme, 'teal': !isDarkTheme,font-weight-bold mx-3"
-              :style="{ color: isDarkTheme ? '' : '#1bae9c' }"
+              :style="{ color: isDarkTheme ? '' : 'white' }"
               >{{ item.title }}</v-list-item-title
             >
           </v-list-item-content>

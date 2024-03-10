@@ -52,7 +52,7 @@
         </v-flex>
       </v-layout>
       <v-navigation-drawer
-        color="black"
+        color="#1bae9c"
         v-model="drawer"
         fixed
         left
@@ -63,7 +63,7 @@
           <v-spacer></v-spacer>
           <v-btn icon @click="drawer = false">
             <v-icon 
-            color="#43bbac">mdi-close</v-icon>
+            color="white">mdi-close</v-icon>
           </v-btn>
         </v-card-title>
         <signed-in-nav></signed-in-nav>
