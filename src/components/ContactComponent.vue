@@ -355,6 +355,8 @@ export default {
   .picture-container {
     order: 0;
     height: 500px;
+    display:grid;
+    place-items: center;
   }
 
   .form-container {

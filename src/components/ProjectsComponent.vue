@@ -332,15 +332,17 @@ export default {
 }
 
 .before-stagger {
+  transform: scale(0.8) translateY(0px);
   opacity: 0;
-  transform: translateY(100px);
-  transition: all 1s ease-out;
+  transition: all 0.5s ease-out; /* Adjust the duration to make it faster */
 }
 
 .stagger {
+  transform: scale(1) translateY(0px);
   opacity: 1;
-  transform: translateY(0px);
+  transition: all 0.5s ease-out; /* Adjust the duration to make it faster */
 }
+
 
 .custom-col:nth-child(odd) {
   transition-delay: 0.2s; 
