@@ -243,6 +243,9 @@ export default {
   width: 100%;
   padding-top: 20px;
   margin-top: 50px;
+  display: grid;
+  place-items: center;
+
 
 }
 .profile-picture-container {
@@ -305,6 +308,17 @@ export default {
 .enter-in {
   opacity: 1;
   transform: translateY(83px);
+}
+.mt-info{
+  display: flex;
+  justify-self: center;
+
+
+}
+.text-container{
+  display: grid;
+  place-items: center;
+
 }
 }
 </style>

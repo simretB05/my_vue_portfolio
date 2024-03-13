@@ -367,5 +367,8 @@ export default {
     width: 100%;
     border-radius: 8px;
   }
+  .col-md-6 .col-12{
+    padding: 0;
+  }
 }
 </style>
