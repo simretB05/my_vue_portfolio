@@ -193,6 +193,7 @@ export default {
           .catch((err) => {
             // Handle errors if the download fails
             err;
+            this.resetForm()
             this.$toast.error(
               "Sorry, an error occurred while attempting to send Your Message Please Try Again!",
               {
