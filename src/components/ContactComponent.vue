@@ -181,6 +181,7 @@ export default {
           })
           .then((res) => {
             res;
+            this.resetForm()
             this.$toast.success(
               "Thanks for getting in touch! I'll get back to you soon.",
               {
@@ -193,7 +194,7 @@ export default {
             // Handle errors if the download fails
             err;
             this.$toast.error(
-              "Sorry, an error occurred while attempting to download the resume. Please try again. If the issue persists, feel free to contact me for assistance.",
+              "Sorry, an error occurred while attempting to send Your Message Please Try Again!",
               {
                 position: "top-right",
                 timeout: 4000,
