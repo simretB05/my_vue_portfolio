@@ -52,8 +52,9 @@
 
     <div    v-scrollanimation="'fade'" class="dynamic-website"><h2>Dynamic Website</h2>
       <p class="dynamic_text">
-        Amazon EC2 instances host my backend server and web application. The backend uses RDS MariaDB on Amazon EC2, ensuring secure and efficient data management. This combination creates a scalable infrastructure supporting the dynamic nature of my web application, ensuring a responsive user experience.
-</p></div>
+    Amazon EC2 instances host my backend server and web application. The backend uses RDS MariaDB on Amazon EC2, ensuring secure and efficient data management. This combination creates a scalable infrastructure supporting the dynamic nature of my web application, ensuring a responsive user experience. Additionally, I utilize Amazon S3 to store images from my application, providing reliable and scalable storage for media assets.
+</p>
+</div>
 
     <div name="card-fade" tag="div" class="card-container" ref="dynamicContainer">
   <div
