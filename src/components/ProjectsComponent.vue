@@ -148,7 +148,7 @@ export default {
         {
           title: "Project 3",
           description:
-          "Dorm Finder website built with Vue.js and Vuetify, deployed on AWS EC2. Utilizes MariaDB RDS for efficient data management, following a similar concept to the food ordering website.",
+          "    My university website utilizes Amazon EC2 for hosting, Flask for the backend, MariaDB RDS for data storage, and Amazon S3 for storing images. The frontend is built with Vue.js and Vuetify, deployed on EC2.",
           link: "https://dormfinder.simret.codes",
           imageSrc: "/images/dorm_finder.jpg",
         },
