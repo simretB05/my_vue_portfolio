@@ -11,9 +11,10 @@
       projects in the future.
     </p>
     <div v-scrollanimation="'fade'" class="static-website"><h2>Static Website</h2>
-      <p  class="static_text">
-        My static sites are hosted on Amazon S3, leveraging the power of scalable object storage for reliable delivery of images, stylesheets, and other static assets globally. This enhances website performance, leading to quick loading times and a seamless user experience.
-</p></div>
+      <p class="static_text">
+    My static sites are hosted on Amazon S3, leveraging the power of scalable object storage for reliable delivery of images, stylesheets, and other static assets globally. This content is distributed efficiently using Amazon CloudFront, a content delivery network (CDN), which caches content at edge locations around the world for faster access. Additionally, I ensure secure connections to my sites using SSL/TLS certificates managed by AWS Certificate Manager. DNS routing for my domains is managed seamlessly through Amazon Route 53, providing reliable and scalable domain name resolution.
+</p>
+</div>
     <div name="card-fade" tag="div" class="card-container" ref="staticContainer">
   <div
     v-for="( static_projects, index) in  static_projects"
