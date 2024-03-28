@@ -3,6 +3,8 @@
     <section class="about-section">
       <div class="profile-container">
         <div class="profile-picture-container" v-scrollanimation="'fade-in'">
+          <div class="outer-circle outer-circle-first"></div> <!-- First outer circle -->
+          <div class="outer-circle outer-circle-second"></div> <!-- Second outer circle -->
           <div class="decorative-circle"></div>
           <div class="profile-picture">
             <img
@@ -48,7 +50,6 @@
             </div>
             <pdf-download-btn-util></pdf-download-btn-util>
           </div>
-         
         </div>
       </div>
     </section>
@@ -78,18 +79,17 @@ export default {
   },
 };
 </script>
-
 <style scoped>
 .main {
   display: grid;
   place-items: center;
   width: 100%;
 }
-.profile-container{
-  margin-top: 40px;
-  margin: 0 auto;
 
+.profile-container {
+  margin: 0 auto;
 }
+
 .about-section {
   display: flex;
   flex-direction: column;
@@ -106,36 +106,56 @@ export default {
   padding: 20px;
   margin-right: 60px;
   margin-bottom: 80px;
-
 }
 
 .profile-picture-container {
   position: relative;
-  top: -200px;
-  right: -200px;
+  width: 125px; 
+  height: 125px; 
+}
 
+.outer-circle {
+  position: absolute;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 1.3px dashed  #0a8274;
+  opacity: 0.5;
+  top: 50%;
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+}
+
+.outer-circle-first {
+  width: 410px; 
+  height: 410px; 
+}
+
+.outer-circle-second {
+  width: 350px;
+  height: 350px; 
 }
 
 .decorative-circle {
   position: absolute;
-  width: 400px;
-  height: 400px;
+  width: 312px; 
+  height: 312px; 
   border-radius: 50%;
-  background-color: #058072;
-  opacity: 0.2;
-  top: -50%;
-  right: -50%;
+  background-color: #3ebaab;
+  opacity: 0.26;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
 }
 
 .profile-picture img {
   position: absolute;
-  top: 50%;
-  right: 50%;
-  width: 400px;
-  height: 400px;
+  width: 300px; 
+  height: 300px; 
   border-radius: 50%;
- border: 1px broken #1bae9c;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  object-fit: contain;
 }
 
 .my-name {
@@ -151,16 +171,17 @@ export default {
   color: #1bae9c;
   margin-bottom: 20px;
 }
-.about-description{
+
+.about-description {
   width: 40%;
   padding-top: 20px;
-
 }
+
 .my-description {
   font-size: 1rem;
   line-height: 1.5;
   text-align: start;
-  color:#a2a0a0 ;
+  color: #a2a0a0;
   font-weight: 400;
   margin-bottom: 20px;
 }
@@ -179,7 +200,7 @@ export default {
 
 .before-fade-in {
   opacity: 0;
-  transform: translateX(50px); /* Adjust the value according to your preference */
+  transform: translateX(50px); 
   transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
@@ -190,7 +211,7 @@ export default {
 
 .before-enter-in {
   opacity: 0;
-  transform: translateX(-100px); /* Adjust the value according to your preference */
+  transform: translateX(-100px); 
   transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
@@ -198,6 +219,7 @@ export default {
   opacity: 1;
   transform: translateX(0px);
 }
+
 .before-enter-up {
   opacity: 0;
   transform: translateY(10px);
@@ -208,10 +230,11 @@ export default {
   opacity: 1;
   transform: translateY(0px);
 }
-.mt-info{
 
+.mt-info {
   display: flex;
 }
+
 .btn {
   border: none;
   text-align: center;
@@ -223,102 +246,108 @@ export default {
   transition: background-color 0.3s, color 0.3s;
   cursor: pointer;
 }
+
 .btn:hover {
   box-shadow: 0 3px 3px rgba(21, 181, 167, 0.4);
 }
+
 .btn:active {
   transform: translateY(3px);
   box-shadow: none;
 }
 
 /* Responsive Styles */
-@media (max-width: 768px) {
+@media only screen and (max-width: 1200px) {
   .profile-container {
     flex-direction: column;
     text-align: center;
     margin-top: 0px;
     margin: 0;
   }
-.about-description{
-  width: 100%;
-  padding-top: 20px;
-  margin-top: 50px;
-  display: grid;
-  place-items: center;
 
+  .about-description {
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    place-items: center;
+  }
 
-}
-.profile-picture-container {
-  position: relative;
-  top: -100px;
-  right: -140px;
-  margin-bottom: 20px;
+  .profile-picture-container {
+    position: relative;
+    margin-bottom: 20px;
+  }
 
+  .outer-circle {
+    width: 350px;
+    height: 350px; 
+  }
 
-}
-.decorative-circle {
-  position: absolute;
-  width: 270px;
-  height: 270px;
-  border-radius: 50%;
-  background-color: #058072;
-  opacity: 0.2;
+  .outer-circle-first {
+    width: 360px; 
+    height: 360px; 
+  }
 
-}
-.profile-picture img {
-  position: absolute;
-  width: 270px;
-  height: 270px;
-  border-radius: 50%;
- border: 1px broken #1bae9c;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-.my-description {
-  text-align: center;
- 
-}
+  .outer-circle-second {
+    width: 328px;
+    height: 326px;
+  }
 
-.before-fade-in {
-  opacity: 0;
-  transform: translateY(-50px);
-  transition: all 1s ease-out;
-}
+  .decorative-circle {
+    width: 307px;
+    height: 307px; 
+  }
 
-.fade-in {
-  opacity: 1;
-  transform: translateY(0px);
-}
-.before-enter-up {
-  opacity: 0;
-  transform: translateY(10px);
-  transform: translateX(0px);
-  transition: all 1s ease-out;
-}
+  .profile-picture img {
+    width: 307px; 
+    height: 307px; 
+  }
 
-.enter-up {
-  opacity: 1;
-  transform: translateY(0px);
-}
-.before-enter-in {
-  opacity: 0;
-  transform: translateY(10px);
-  transition: all 1s ease-out;
-}
+  .my-description {
+    text-align: center;
+  }
 
-.enter-in {
-  opacity: 1;
-  transform: translateY(83px);
-}
-.mt-info{
-  display: flex;
-  justify-self: center;
+  .before-fade-in {
+    opacity: 0;
+    transform: translateY(-2px);
+    transition: all 1s ease-out;
+  }
 
+  .fade-in {
+    opacity: 1;
+    transform: translateY(0px);
+  }
 
-}
-.text-container{
-  display: grid;
-  place-items: center;
+  .before-enter-up {
+    opacity: 0;
+    transform: translateY(10px);
+    transform: translateX(0px);
+    transition: all 1s ease-out;
+  }
 
-}
+  .enter-up {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+
+  .before-enter-in {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 1s ease-out;
+  }
+
+  .enter-in {
+    opacity: 1;
+    transform: translateY(83px);
+  }
+
+  .mt-info {
+    display: flex;
+    justify-self: center;
+  }
+
+  .text-container {
+    display: grid;
+    place-items: center;
+  }
 }
 </style>
