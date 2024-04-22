@@ -71,12 +71,13 @@ export default {
     scrollToSection(sectionId) {
       document.querySelector(sectionId).scrollIntoView({
         behavior: "smooth",
-      });
+        
+      } );
+      this.drawer===false
     },
     async logout() {
       if (this.token) {
         try {
-          this.$root.$emit("loggedOut");
           this.$router.push(`/`);
         } catch (error) {
           error;

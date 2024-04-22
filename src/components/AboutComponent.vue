@@ -9,10 +9,10 @@
           <div class="profile-picture">
             <img
               v-if="isDarkTheme"
-              lazy-src="/images/simret2.png"
+              lazy-src="/images/pic.jpg"
               max-height="200px"
               max-width="200px"
-              src="/images/simret2.png"
+              src="/images/pic.jpg"
               class="rounded-circle"
             />
             <img
@@ -118,8 +118,8 @@ export default {
   position: absolute;
   border-radius: 50%;
   background-color: transparent;
-  border: 1.3px dashed  #0a8274;
-  opacity: 0.5;
+  border: 1.3px dashed  #960631;
+  opacity: 0.7;
   top: 50%;
   left: 50%; 
   transform: translate(-50%, -50%); 
@@ -140,8 +140,8 @@ export default {
   width: 312px; 
   height: 312px; 
   border-radius: 50%;
-  background-color: #3ebaab;
-  opacity: 0.26;
+  background-color: #08715a;
+  opacity: 0.6;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%); 
@@ -155,7 +155,7 @@ export default {
   top: 50%; 
   left: 50%; 
   transform: translate(-50%, -50%); 
-  object-fit: contain;
+  object-fit:cover;
 }
 
 .my-name {
