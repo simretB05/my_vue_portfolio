@@ -9,18 +9,18 @@
           <div class="profile-picture">
             <img
               v-if="isDarkTheme"
-              lazy-src="/images/pic.jpg"
+              lazy-src="/images/pic1.jpg"
               max-height="200px"
               max-width="200px"
-              src="/images/pic.jpg"
+              src="/images/pic1.jpg"
               class="rounded-circle"
             />
             <img
               v-else
-              lazy-src="/images/simret2.png"
+              lazy-src="/images/pic1.jpg"
               max-height="200px"
               max-width="200px"
-              src="/images/simret2.png"
+              src="/images/pic1.jpg"
               class="rounded-circle"
             />
           </div>
@@ -140,7 +140,7 @@ export default {
   width: 312px; 
   height: 312px; 
   border-radius: 50%;
-  background-color: #08715a;
+  background-color: #045644ca;
   opacity: 0.6;
   top: 50%;
   left: 50%;
