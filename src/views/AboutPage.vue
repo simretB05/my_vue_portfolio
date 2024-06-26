@@ -14,6 +14,7 @@ export default {
   },
   metaInfo() {
     let baseUrl = "https://portfolio.simret.codes";
+    let facebookAppId = "1150780559522340"; // Replace with your Facebook App ID
 
     return {
       title: "About Me - Simret's Portfolio",
@@ -24,6 +25,7 @@ export default {
         { property: "og:type", content: "website" },
         { property: "og:url", content: baseUrl },
         { property: "og:image", content: `${baseUrl}/images/website_image.png` },
+        { property: "fb:app_id", content: facebookAppId }, // Facebook App ID
 
         // Twitter
         { name: "twitter:card", content: "summary_large_image" },
@@ -38,13 +40,6 @@ export default {
         { itemprop: "name", content: "About Me - Simret's Portfolio" },
         { itemprop: "description", content: "Learn more about Simret and her achievements." },
         { itemprop: "image", content: `${baseUrl}/images/website_image.png` },
-
-        // Additional Keywords
-        { name: "author", content: "Simret Paulos" },
-        { name: "robots", content: "index,follow" },
-        { property: "fb:app_id", content: "191114200293519" },
-        { name: "keywords", content: "portfolio, projects, AWS, cloud computing, architecture, Simret Paulos, About Me"},
-
       ],
     };
   },
