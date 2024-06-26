@@ -1,0 +1,12 @@
+# @format
+
+version: "3"
+
+services:
+  frontend:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./src:/app/src
+    command: npm run serve
