@@ -31,10 +31,20 @@ export default {
         { name: "twitter:description", content: "Learn more about Simret and her achievements." },
         { name: "twitter:image", content: `${baseUrl}/images/website_image.png` },
 
+        // WhatsApp
+        { property: "whatsapp", content: "Share on WhatsApp message" },
+
         // Google
         { itemprop: "name", content: "About Me - Simret's Portfolio" },
         { itemprop: "description", content: "Learn more about Simret and her achievements." },
         { itemprop: "image", content: `${baseUrl}/images/website_image.png` },
+
+        // Additional Keywords
+        { name: "author", content: "Simret Paulos" },
+        { name: "robots", content: "index,follow" },
+        { property: "fb:app_id", content: "191114200293519" },
+        { name: "keywords", content: "portfolio, projects, AWS, cloud computing, architecture, Simret Paulos, About Me"},
+
       ],
     };
   },
